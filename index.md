@@ -86,6 +86,10 @@ Previously, I have been working in the [DHLAB](https://www.epfl.ch/labs/dhlab/) 
 ## <span class="section-bar"></span> News
 <table>
   <tr>
+    <td>Nov. 2024</td>
+    <td>Won the AXA challenge in <a href="https://www.linkedin.com/company/lauzhack/">Lauzhack</a> 2024 Hackathon [<a href="https://github.com/MikiVanousek/vitol">project</a>]</td>
+  </tr>
+  <tr>
     <td>Sep. 2024</td>
     <td><a href="https://deepfake-minihackaton.my.canva.site/">Participated</a> in <a href="https://memento.epfl.ch/event/deepfake-mini-hackathon/">DeepFake Hackaton</a></td>
   </tr>
