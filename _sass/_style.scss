@@ -136,14 +136,14 @@ hr {
 
 .title-main {
     font-weight: bolder;
-    font-family: 'Amatic SC', cursive;
+    font-family: var(--font-styrene-b);
     font-size: 48px;
 }
 
 .post-title {
     font-weight: bolder;
     color: #333333;
-    font-family: 'Quicksand', sans-serif;
+    font-family: var(--font-styrene-b);
     font-size: 26px;
 }
 
@@ -155,7 +155,7 @@ hr {
 
 h2 {
     display: inline;
-    font-family: 'Quicksand', sans-serif;
+    font-family: var(--font-styrene-b);
     font-weight: lighter;
     color: #333333;
 }
@@ -167,7 +167,7 @@ h2 {
 .tag {
     // color: #546E7A;
     color: #9E9E9E;
-    font-family:sans-serif;
+    font-family: var(--font-styrene-b);
 }
 
 .dates {
