@@ -109,7 +109,7 @@ Previously, I have been working in the [DHLAB](https://www.epfl.ch/labs/dhlab/) 
 <table>
   <tr>
     <td>Feb. 2025</td>
-    <td>Joined a new project on Multimodal reasoning at the [NLP lab](https://nlp.epfl.ch)</td>
+    <td>Joined a new project on Multimodal Reasoning at the <a href="https://nlp.epfl.ch/">NLP lab</a></td>
   </tr>
   <tr>
     <td>Nov. 2024</td>
