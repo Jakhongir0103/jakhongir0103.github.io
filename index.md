@@ -5,9 +5,9 @@ layout: main
 
 <img class="profile-picture" src="profile-picture.jpeg">
 
-I am currently an **MSc. student** at [EPFL](https://epfl.ch) in Data Science and a **Research Student Assistant** at [NLP lab](https://nlp.epfl.ch) supervised by prof. [Antoine Bosselut](https://atcbosselut.github.io/). 
+I am currently an MSc. student at [EPFL](https://epfl.ch) in Data Science and a Research Student Assistant at [NLP lab](https://nlp.epfl.ch) supervised by prof. [Antoine Bosselut](https://atcbosselut.github.io/). 
 
-Previously, I have been working in the [DHLAB](https://www.epfl.ch/labs/dhlab/) as a **Research Student Assistant** supervised by [Frédéric Kaplan](https://people.epfl.ch/frederic.kaplan?lang=en). In the past, I completed my BSc. in Computer Engineering at [Politecnico di Torino](https://www.google.com/search?client=safari&rls=en&q=politecnico+di+torino&ie=UTF-8&oe=UTF-8) and have done a 6 month internship as a **Data Analyst** at [Fater](https://www.fatergroup.com/en) supervised by [Salvatore Croce](https://www.researchgate.net/profile/Salvatore-Croce).
+Previously, I have been working in the [DHLAB](https://www.epfl.ch/labs/dhlab/) as a Research Student Assistant supervised by [Frédéric Kaplan](https://people.epfl.ch/frederic.kaplan?lang=en). In the past, I completed my BSc. in Computer Engineering at [Politecnico di Torino](https://www.google.com/search?client=safari&rls=en&q=politecnico+di+torino&ie=UTF-8&oe=UTF-8) and have done a 6 month internship as a Data Analyst at [Fater](https://www.fatergroup.com/en) supervised by [Salvatore Croce](https://www.researchgate.net/profile/Salvatore-Croce).
 
 <p align="left">
   <a href="mailto:jakhongir.saydaliev@epfl.ch">
@@ -47,8 +47,8 @@ Previously, I have been working in the [DHLAB](https://www.epfl.ch/labs/dhlab/) 
 
 ## <span class="section-bar"></span> Education
 
-1. **Master's in Data Science**. EPFL. Lausanne, Switzerland. <span class="dates">Sep. 2023 - Present</span>
-2. **Bachelor's in Computer Engineering**. Politecnico di Torino. Turin, Italy. <span class="dates">Sep. 2019 - Jul. 2023</span>
+1. **MSc in Data Science**. EPFL. Lausanne, Switzerland. <span class="dates">Sep. 2023 - Present</span>
+2. **BSc in Computer Engineering**. Politecnico di Torino. Turin, Italy. <span class="dates">Sep. 2019 - Jul. 2023</span>
 
 ---
 
@@ -107,6 +107,10 @@ Previously, I have been working in the [DHLAB](https://www.epfl.ch/labs/dhlab/) 
 
 ## <span class="section-bar"></span> News
 <table>
+  <tr>
+    <td>Feb. 2025</td>
+    <td>Joined a new project on Multimodal reasoning at the [NLP lab](https://nlp.epfl.ch)</td>
+  </tr>
   <tr>
     <td>Nov. 2024</td>
     <td>Won the AXA challenge in <a href="https://www.linkedin.com/company/lauzhack/">Lauzhack</a> 2024 Hackathon [<a href="https://github.com/MikiVanousek/vitol">project</a>]</td>
