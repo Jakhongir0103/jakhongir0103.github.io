@@ -54,8 +54,8 @@ Previously, I have been working in the [DHLAB](https://www.epfl.ch/labs/dhlab/) 
 
 ## <span class="section-bar"></span> Experience
 
-1. **Student Research Assistant**. [NLP lab](https://nlp.epfl.ch). EPFL, Switzerland. <span class="dates">Jun. 2024 - Present.</span> <br> Multilingual Model Training
-2. **Student Research Assistant**. [DHLAB](https://www.epfl.ch/labs/dhlab/). EPFL, Switzerland. <span class="dates">Feb. 2024 - Sep. 2024.</span> <br> Text-to-SQL system and LLM agents development.
+1. **Student Research Assistant**. [NLP lab](https://nlp.epfl.ch). EPFL, Switzerland. <span class="dates">Jun. 2024 - Present.</span> <br> Multilingual Pretrain Data Collection; Multimodal Reasoning.
+2. **Student Research Assistant**. [DHLAB](https://www.epfl.ch/labs/dhlab/). EPFL, Switzerland. <span class="dates">Feb. 2024 - Sep. 2024.</span> <br> Text-to-SQL system; LLM agents development.
 3. **Data Analyst**. [Fater](https://www.fatergroup.com/en). Italy. <span class="dates">Nov. 2022 - May. 2023.</span>
 4. **IoT Engineer**. [LINKS](https://linksfoundation.com/en/). Italy. <span class="dates">Oct. 2021 - Feb. 2022.</span>
 
