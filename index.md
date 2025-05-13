@@ -77,14 +77,6 @@ Previously, I have been working in the [DHLAB](https://www.epfl.ch/labs/dhlab/) 
 
 ---
 
-## <span class="section-bar"></span> Mini Projects (less than a week)
-1. **Gender Classification**. [[code](github.com/Jakhongir0103/Gender_classification_model)] <br> <span class="tag">#DeepLearning</span> <span class="tag">#Classification
-2. **Pneumonia Prediction**. [[code](github.com/Jakhongir0103/ML-DL_projects/blob/main/Pneumonia_recognition.ipynb)] <br> <span class="tag">#DeepLearning</span> <span class="tag">#Classification</span>
-3. **Customer Satisfaction Prediction**. [[code](github.com/Jakhongir0103/ML-DL_projects/blob/main/Airline_customer_satisfaction.ipynb)] <br> <span class="tag">#MachineLearning</span> <span class="tag">#Classification</span>
-4. **Ticket Price Prediction**. [[code](github.com/Jakhongir0103/ML-DL_projects/blob/main/airplane_ticket_price_prediction.ipynb)] <br><span class="tag">#MachineLearning</span> <span class="tag">#Regression</span>
-
----
-
 ## <span class="section-bar"></span> Relevant Courseworks
 1. **CS-612.** Topics in NLP. [[webpage](https://edu.epfl.ch/coursebook/en/topics-in-natural-language-processing-CS-612)]
 2. **CS-552.** Modern NLP. [[webpage](https://edu.epfl.ch/coursebook/en/modern-natural-language-processing-CS-552)]
