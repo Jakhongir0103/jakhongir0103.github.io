@@ -5,7 +5,7 @@ layout: main
 
 <img class="profile-picture" src="profile-picture.jpeg">
 
-I am currently an MSc. student at [EPFL](https://epfl.ch) in Data Science and a Research Student Assistant at [NLP lab](https://nlp.epfl.ch) supervised by prof. [Antoine Bosselut](https://atcbosselut.github.io/). 
+I am currently an MSc Data Science student at [EPFL](https://epfl.ch) and a Research Student Assistant at [NLP lab](https://nlp.epfl.ch) supervised by Prof. [Antoine Bosselut](https://atcbosselut.github.io/).
 
 <p align="left">
   <a href="mailto:jakhongir.saydaliev@epfl.ch">
@@ -88,9 +88,9 @@ I am currently an MSc. student at [EPFL](https://epfl.ch) in Data Science and a 
 <!-- 3. **Reinforcement Learning on Mountain Car Environment**. For the [Mountain Car](https://www.gymlibrary.dev/environments/classic_control/mountain_car/) environment, we implemented Dyna, DQN algorithms, and the extensions of DQN with heuristic rewards. [[code](https://github.com/Jakhongir0103/mountain-car-reinforcement-learning), [report](https://github.com/Jakhongir0103/mountain-car-reinforcement-learning/blob/main/pdf/report.pdf)] <br> <span class="tag">#ReinforcementLearning</span> <span class="tag">#DeepLearning</span> <span class="tag">#MachineLearning</span> -->
 <!-- 6. **Cardiovascular Diseases Prediction**. Implemented standard ML algorithms using native python libraries and numpy for Classification taks. [[code](https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction), [report](https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction/blob/main/pdfs/project1_report.pdf)] <br> <span class="tag">#MachineLearning</span> <span class="tag">#Classification</span> -->
 
----
+<!-- ---
 
-<!-- ## <span class="section-bar"></span> Relevant Courseworks
+## <span class="section-bar"></span> Relevant Courseworks
 1. **CS-612.** Topics in NLP. [[webpage](https://edu.epfl.ch/coursebook/en/topics-in-natural-language-processing-CS-612)]
 2. **CS-612.** Topics in NLP. [[webpage](https://edu.epfl.ch/coursebook/en/topics-in-natural-language-processing-CS-612)]
 3. **CS-552.** Modern NLP. [[webpage](https://edu.epfl.ch/coursebook/en/modern-natural-language-processing-CS-552)]
@@ -166,3 +166,4 @@ I am currently an MSc. student at [EPFL](https://epfl.ch) in Data Science and a 
 </table>
 
 </details>
+<br><br><br>
