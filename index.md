@@ -68,7 +68,7 @@ I am currently an MSc Data Science student at [EPFL](https://epfl.ch) and a Rese
 1. <span id="llm-agents"><strong>LLM-Powered Agents for Navigating Venice's Historical Cadastre</strong></span><br/>
     <span class="authors">**Jakhongir Saydaliev**, Tristan Karch, Isabella Di Lenardo, Frédéric Kaplan</span><br/>
     <span class="conference">Preprint</span><br/>
-    [[paper](https://arxiv.org/abs/2505.17148)]
+    [[paper](https://arxiv.org/abs/2505.17148), [code](https://github.com/dh-epfl-students/dhlab-venice-llm)]
 
 ---
 
