@@ -78,7 +78,7 @@ I am currently an MSc Data Science student at [EPFL](https://epfl.ch) and a Rese
 
 ---
 
-## <span class="section-bar"></span> Lab Projects
+## <span class="section-bar"></span> Selected Lab Projects
 1. <span id="multimodal-reasoning"><strong>Multimodal Reasoning.</strong></span> Trained Multimodal Models with Group Relative Policy Optimization for various reasoning tasks. [[code](https://github.com/Jakhongir0103/multimodal_cot), [report](https://github.com/Jakhongir0103/multimodal_cot/blob/main/pdf/technical_report.pdf)] <br> <span class="tag">#VLM</span><span class="tag">#PostProcessing</span><span class="tag">#Reasoning</span><span class="tag">#RL</span>
 1. <span id="visual-reasoning"><strong>Visual Reasoning with RL.</strong></span> Investigated the extent to which GRPO can be applied to VLMs for visual question answering tasks. [[code](https://github.com/Jakhongir0103/VLM-R1), [report](https://github.com/Jakhongir0103/VLM-R1/blob/main/pdf/Visual_Intelligence_Tech_Report.pdf)] <br> <span class="tag">#VLM</span><span class="tag">#PostProcessing</span><span class="tag">#Reasoning</span><span class="tag">#RL</span><span class="tag">#GRPO</span>
 1. **LLM post-processing (SFT, DPO, RAG)**. Instruction-Tuned Galactica-1.3B model on Scientific MCQA task using SFT and DPO, and further tuned in the RAG settings. [[report](https://github.com/Jakhongir0103/sft-dpo-rag-training/blob/main/pdfs/report.pdf)] <br> <span class="tag">#DeepLearning</span> <span class="tag">#MachineLearning</span> <span class="tag">#LLM</span> <span class="tag">#FineTuning</span> <span class="tag">#RAG</span> <span class="tag">#NLP</span>
