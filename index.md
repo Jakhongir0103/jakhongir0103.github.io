@@ -64,7 +64,7 @@ I am currently an MSc Data Science student at [EPFL](https://epfl.ch) and a Rese
 1. <span id="conlid"><strong>ConLID: Supervised Contrastive Learning for Low-Resource Language Identification</strong></span><br/>
     <span class="authors">**Jakhongir Saydaliev**, Negar Foroutan, Ye Eun Kim, Antoine Bosselut</span><br/>
     <span class="conference">Preprint</span><br/>
-    [[paper](https://arxiv.org/abs/2505), [code](https://github.com/epfl-nlp/ConLID)]
+    [[paper](https://arxiv.org/abs/2506.15304), [code](https://github.com/epfl-nlp/ConLID)]
 1. <span id="llm-agents"><strong>LLM-Powered Agents for Navigating Venice's Historical Cadastre</strong></span><br/>
     <span class="authors">**Jakhongir Saydaliev**, Tristan Karch, Isabella Di Lenardo, Frédéric Kaplan</span><br/>
     <span class="conference">Preprint</span><br/>
