@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Jakhongir
 middle_name: 
 last_name: Saydaliev
-contact_note:
+contact_note: >
   LinkeID
   Google Scholar
   Email
@@ -170,7 +170,7 @@ kramdown:
 
 # Includes & excludes
 include: ["_pages", "_scripts"]
-excludes:
+exclude:
   - _pages/repositories.md
   - _pages/blog.md
   - _pages/books.md
@@ -178,7 +178,6 @@ excludes:
   - _pages/profiles.md
   - _pages/dropdown.md
   - _posts/
-exclude:
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
