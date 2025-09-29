@@ -172,6 +172,12 @@ kramdown:
 
 # Includes & excludes
 include: ["_pages", "_scripts"]
+excludes:
+  - _pages/repositories.md
+  - _pages/teaching.md
+  - _posts/
+  - _pages/profiles.md
+  - _pages/dropdown.md
 exclude:
   - bin/
   - CONTRIBUTING.md
