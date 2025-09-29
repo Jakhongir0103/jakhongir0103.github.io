@@ -24,10 +24,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I research large language models (LLMs) as an MSc student at <a href='https://www.epfl.ch/en/'>EPFL</a>. I’m fortunate to have worked at the href='#'>NLP</a>, href='#'>DHLAB</a>, href='#'>LINX</a> labs. I did my Bachelor’s at <a href='https://www.polito.it/'>Politecnico di Torino</a>.
+Hello
+
+<!-- I research large language models (LLMs) as an MSc student at <a href='https://www.epfl.ch/en/'>EPFL</a>. I’m fortunate to have worked at the href='#'>NLP</a>, href='#'>DHLAB</a>, href='#'>LINX</a> labs. I did my Bachelor’s at <a href='https://www.polito.it/'>Politecnico di Torino</a>.
 
 ### Research Interests
 I research making LLMs more useful, e.g., by improving their capabilities. Below are some areas directions I have been working on and interested in:
 
 - Multilinguality: Language Identification, Multilingual Data Collection (cite ...)
-- LLM's Reasoning: Overthinking Mitigation, ...
+- LLM's Reasoning: Overthinking Mitigation, ... -->
