@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2016-01-15 07:59:00-0400
+date: 2024-04
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+<a href="https://github.com/Jakhongir0103/Coding_interview_bot">Participated</a> in <a href="https://www.linkedin.com/posts/lauzhack_hackathon-llms-genai-activity-7189548347953750016-CaxD/">LLMs Hackathon</a>
