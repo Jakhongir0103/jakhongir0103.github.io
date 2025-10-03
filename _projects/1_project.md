@@ -4,7 +4,7 @@ title: GalactiTA
 description: GalactiTA: AI-Driven Solutions for Scientific Question Answering
 img: assets/img/projects/mnlp_overall_workflow.png
 importance: 1
-category: course project
+category: university
 related_publications: false
 ---
 <!-- 
