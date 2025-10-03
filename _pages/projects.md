@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Selected Projects
+title: Projects
 permalink: /projects/
-description:
+description: You can find the full list of my projects on my [GitHub](https://github.com/Jakhongir0103) account.
 nav: true
 nav_order: 3
 display_categories: [university, work]

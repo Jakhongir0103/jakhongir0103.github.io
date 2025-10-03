@@ -1,7 +1,7 @@
 ---
 layout: page
 title: GalactiTA
-description: GalactiTA: AI-Driven Solutions for Scientific Question Answering
+description: 1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tuning on scientific datasets.
 img: assets/img/projects/mnlp_overall_workflow.png
 importance: 1
 category: university
