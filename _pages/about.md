@@ -35,9 +35,9 @@ I research building inclusive, multimodal reasoning AI systems that work for eve
   <!-- - COLM workshop (annotations, models) -->
 
 - **Multimodal Reasoning:** Models need to reason across modalities, not just text, to handle real-world scenarios
-  - Grounding-based multimodal reasoning: Trained VLMs to align visual and textual representations through bounding boxes
-  - Tool-augmented visual reasoning: Trained VLMs with RL in multi-turn to manipulate images during reasoning
-  - GUI agents: Building autonomous agents for mouse/keyboard operations (Logitech)
+  - Grounded multimodal reasoning: Bounding boxes based reasoning 
+  - Tool-augmented visual reasoning: Multi-turn VLMs training with RL
+  - GUI agents: Building autonomous agents for mouse/keyboard operations (ongoing)
 
 - **Efficient Reasoning:** As we scale to multimodal scenarios, we need computationally efficient reasoning to make deployment practical
-  - Investigating the "overthinking" phenomenon in LLMs using uncertainty metrics like entropy and certainty
+  - Investigating the "overthinking" phenomenon in LLMs (ongoing)
