@@ -10,21 +10,21 @@ ninja.data = [{
       window.location.href = "/";
     },
   },{id: "nav-publications",
-          title: "Publications",
-          description: "You can also find my articles on my [Google Scholar](https://scholar.google.com/citations?user=lxuyDTsAAAAJ&amp;hl=en) profile.",
+          title: "publications",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-projects",
-          title: "Projects",
-          description: "You can find the full list of my projects on my [GitHub](https://github.com/Jakhongir0103) account.",
+          title: "projects",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-cv",
-          title: "CV",
+          title: "cv",
           description: "",
           section: "Navigation",
           handler: () => {
