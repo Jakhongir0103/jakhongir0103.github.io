@@ -5,7 +5,7 @@ permalink: /projects/
 description:
 nav: true
 nav_order: 3
-display_categories: [university]
+display_categories: [university, work]
 horizontal: false
 ---
 
