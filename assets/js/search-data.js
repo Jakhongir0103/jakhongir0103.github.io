@@ -11,14 +11,14 @@ ninja.data = [{
     },
   },{id: "nav-publications",
           title: "Publications",
-          description: "You can also find my articles on my Google Scholar profile.",
+          description: "You can also find my articles on my [Google Scholar](https://scholar.google.com/citations?user=lxuyDTsAAAAJ&amp;hl=en) profile.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-selected-projects",
-          title: "Selected Projects",
-          description: "",
+        },{id: "nav-projects",
+          title: "Projects",
+          description: "You can find the full list of my projects on my [GitHub](https://github.com/Jakhongir0103) account.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -87,9 +87,9 @@ ninja.data = [{
           section: "News",},{id: "news-joined-logitech-as-an-ml-research-intern-to-work-on-computer-use-agents",
           title: 'Joined Logitech as an ML Research Intern to work on Computer Use Agents...',
           description: "",
-          section: "News",},{id: "projects-",
-          title: '',
-          description: "",
+          section: "News",},{id: "projects-galactita",
+          title: 'GalactiTA',
+          description: "1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tuning on scientific datasets.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-project-2",
