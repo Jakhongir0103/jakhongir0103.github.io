@@ -1,13 +1,15 @@
 ---
 layout: page
-title: Projects
+title: projects
 permalink: /projects/
-description: You can find the full list of my projects on my [GitHub](https://github.com/Jakhongir0103) account.
+description: 
 nav: true
 nav_order: 3
 display_categories: [university, work]
 horizontal: false
 ---
+
+You can find the full list of my projects on my [GitHub](https://github.com/Jakhongir0103) account.
 
 <!-- pages/projects.md -->
 <div class="projects">
