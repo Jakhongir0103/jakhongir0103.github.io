@@ -11,7 +11,7 @@ paper: https://github.com/Jakhongir0103/sft-dpo-rag-training/blob/main/pdfs/repo
 <!-- Project Links/Buttons -->
 <div class="links" style="margin-bottom: 2rem;">
   {% if page.paper %}
-    <a href="{{ page.paper }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: inherit; border-color: black; color: inherit; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <a href="{{ page.paper }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white; border: 1px solid black; color: black; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
       <i class="fas fa-file-pdf"></i> Technical Report
     </a>
   {% endif %}
