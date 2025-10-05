@@ -5,13 +5,17 @@ description: 1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tu
 img: assets/img/projects/mnlp_raft_workflow.png
 importance: 1
 category: university
+paper: https://github.com/Jakhongir0103/sft-dpo-rag-training/blob/main/pdfs/report.pdf
 ---
-<!-- 
-Categories:
-- Research (Syrielle, SwissAI)
-- Course Projects (MNLP, ...)
-- Hackathons (...)
- -->
+
+<!-- Project Links/Buttons -->
+<div class="links" style="margin-bottom: 2rem;">
+  {% if page.paper %}
+    <a href="{{ page.paper }}" class="btn btn-sm z-depth-0" role="button" target="_blank">
+      <i class="fas fa-file-pdf"></i> Technical Report
+    </a>
+  {% endif %}
+</div>
 
 Large Language Models have transformed education, but they often struggle with technical domains and complex reasoning. This project addresses a key question: **How can we adapt pre-trained LLMs for scientific multiple-choice question answering?** 
 

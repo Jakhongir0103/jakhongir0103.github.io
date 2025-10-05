@@ -1,19 +1,19 @@
-"negar":
-  - firstname: ["Negar Foroutan"]
+"foroutan":
+  - firstname: ["Negar"]
     url: https://negar.foroutan.info/
 
-"antoine":
-  - firstname: ["Antoine Bosselut"]
+"bosselut":
+  - firstname: ["Antoine"]
     url: https://atcbosselut.github.io/
 
-"tristina":
-  - firstname: ["Tristan Karch"]
+"karch":
+  - firstname: ["Tristan"]
     url: https://tristankarch.com/
 
-"isabella":
-  - firstname: ["Isabella Di Lenardo"]
+"di lenardo":
+  - firstname: ["Isabella"]
     url: https://scholar.google.com/citations?user=2NAKSG4AAAAJ&hl=it
 
-"frederic":
-  - firstname: ["Frédéric Kaplan"]
+"kaplan":
+  - firstname: ["Frédéric", "Frederic"]
     url: https://scholar.google.com/citations?user=pZEf29QAAAAJ&hl=en

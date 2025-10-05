@@ -64,6 +64,14 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
+    <!-- Other contributions -->
+    {% if page.other_contributions %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Other contributions</a>
+      </h2>
+      {% include other_contributions.liquid %}
+    {% endif %}
+
     <!-- Social -->
     {% if page.social %}
       <div class="social">
