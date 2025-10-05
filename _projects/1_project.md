@@ -15,7 +15,7 @@ Categories:
 
 Large Language Models have transformed education, but they often struggle with technical domains and complex reasoning. This project addresses a key question: **How can we adapt pre-trained LLMs for scientific multiple-choice question answering?** 
 
-We developed **GalactiTA**, a digital teaching assistant specifically designed for STEM subjects. Starting with the Galactica-1.3B model, we applied a three-stage training pipeline: Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO[$^1$]), and Retrieval-Augmented Generation (RAG[$^2$]) tuning. The final model achieved an **11.52% improvement** over the baseline on EPFL course questions, demonstrating that smaller, specialized models can effectively support students and teaching assistants with domain-specific queries.
+We developed **GalactiTA**, a digital teaching assistant specifically designed for STEM subjects. Starting with the Galactica-1.3B model, we applied a three-stage training pipeline: Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO$^{[1]}$), and Retrieval-Augmented Generation (RAG$^{[2]}$) tuning. The final model achieved an **11.52% improvement** over the baseline on EPFL course questions, demonstrating that smaller, specialized models can effectively support students and teaching assistants with domain-specific queries.
 
 ## Methodology
 
@@ -34,7 +34,7 @@ Our approach follows a systematic pipeline with three distinct training phases. 
 We trained [Galactica-1.3B](https://huggingface.co/facebook/galactica-1.3b) on scientific QA datasets ([ScienceQA](https://scienceqa.github.io/), [SciQ](https://huggingface.co/datasets/allenai/sciq), [ARC](https://huggingface.co/datasets/allenai/ai2_arc), [Stack Exchange](https://huggingface.co/datasets/HuggingFaceH4/stack-exchange-preferences)) totaling ~43k questions. For datasets lacking explanations, we used ChatGPT to generate Chain-of-Thought (CoT) reasoning, teaching the model to explain its answers rather than just provide them.
 
 **Direct Preference Optimization (DPO)**  
-Rather than traditional reinforcement learning, we used DPO[$^1$] to align the model with human preferences. The data collection process involved prompting ChatGPT strategically to generate high-quality responses:
+Rather than traditional reinforcement learning, we used DPO$^{[1]}$ to align the model with human preferences. The data collection process involved prompting ChatGPT strategically to generate high-quality responses:
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
@@ -48,7 +48,7 @@ Rather than traditional reinforcement learning, we used DPO[$^1$] to align the m
 We collected pairs of "good" and "bad" responses—both AI-generated from ChatGPT and human-annotated from platforms like Stack Exchange. This taught the model to distinguish between high-quality and low-quality scientific explanations.
 
 **RAG-Tuning**  
-In the final phase, we fine-tuned the model for RAG[$^2$] incorporating external knowledge. We collected 5GB of scientific documents (textbooks, papers) and created training data where the model learned to generate answers based on retrieved context:
+In the final phase, we fine-tuned the model for RAG$^{[2]}$ incorporating external knowledge. We collected 5GB of scientific documents (textbooks, papers) and created training data where the model learned to generate answers based on retrieved context:
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
