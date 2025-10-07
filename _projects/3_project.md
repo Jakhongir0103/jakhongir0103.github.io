@@ -48,16 +48,18 @@ I used [Anole7B](https://huggingface.co/GAIR/Anole-7b-v0.1), built on the Chamel
 
 For this paradigm, I trained [SEED-LLaMA-8B](https://huggingface.co/AILab-CVC/seed-llama-8b-sft) using GRPO on the [ReSQ](https://huggingface.co/datasets/tasksource/ReSQ) dataset, containing about 1,000 questions involving spatial reasoning about described scenes. The model learned through four reward functions: formatting compliance, accuracy, image-text alignment (cosine similarity between descriptions and generated images), and a penalty for excessive image generation. I compared against a textual GRPO baseline and a strong baseline using DALL-E 3 for visualization and GPT-4o for reasoning.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/syrielle_multimodel2text_example.jpeg" title="Multimodal-to-text reasoning with bounding boxes" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/syrielle_grpo.jpeg" title="GRPO training pipeline" class="img-fluid rounded z-depth-1" %}
-    </div>
+<div class="row justify-content-center">
+  <div class="col-10 col-md-8 mt-3">
+    {% include figure.liquid loading="eager" path="assets/img/projects/syrielle_multimodel2text_example.jpeg" title="Multimodal-to-text reasoning with bounding boxes" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-10 col-md-8 mt-3">
+    {% include figure.liquid loading="eager" path="assets/img/projects/syrielle_grpo.jpeg" title="GRPO training pipeline" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
-<div class="caption">
-    Left: Example of Multimodal-to-Text reasoning with interleaved bounding boxes grounding attention on specific visual regions. Right: Two-stage training pipeline with SFT warmup followed by GRPO optimization.
+
+<div class="caption text-center mt-2">
+  Top: Example of Multimodal-to-Text reasoning with interleaved bounding boxes grounding attention on specific visual regions.  
+  Bottom: Two-stage training pipeline with SFT warmup followed by GRPO optimization.
 </div>
 
 **Multimodal-to-Text Reasoning**

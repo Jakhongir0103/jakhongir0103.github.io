@@ -1,80 +1,86 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
+title: Multimodal Multi-turn Reasoning
+description: Extended the VeRL framework to support for training multimodal models with reinforcement learning with external tools using images as both inputs and outputs.
+img: assets/img/projects/syrielle_diagram.jpeg
 importance: 3
-category: fun
+category: research
+code: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+<!-- Project Links/Buttons -->
+<div class="links" style="margin-bottom: 2rem;">
+  {% if page.code %}
+    <a href="{{ page.code }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <i class="fas fa-file-pdf"></i> Code
+    </a>
+  {% endif %}
+</div>
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Reinforcement learning has revolutionized language model training, but what happens when models need to both see and manipulate images? This project extends the [VeRL](https://github.com/volcengine/verl) framework for training vision-language models using reinforcement learning with external tools, where images serve as both inputs and outputs throughout the learning process.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Technical Approach
+
+Our work extends the VeRL reinforcement learning framework to support multimodal training. The key innovation is creating a unified pipeline where visual data flows seamlessly alongside text throughout the entire RL loop.
+
+### Core Contributions
+
+**Multimodal Data Pipeline**: We redesigned the agent loop to handle images at every stage—from initial policy rollouts through reward computation. This required careful coordination between the text processing components and new image handling mechanisms.
+
+**Flexible Processing Architecture**: The system now supports both text-only and multimodal models through a unified interface that automatically adapts to the model's capabilities. This means researchers can train either type of model without changing their training code.
+
+**Tool Integration Framework**: We developed a comprehensive library of image manipulation tools that models can learn to use, such as:
+- Rotation and flipping operations
+- Cropping and bounding box drawing
+- Line drawing and spatial transformations
+
+The framework is designed for extensibility—adding new tools requires only implementing the tool logic and defining its interface, making it easy to explore different multimodal tasks.
+
+## Experiment: Learning to Estimate Rotation
+
+To validate the framework, we trained [Qwen2.5-VL-3B](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) on a rotation estimation task. The model receives randomly rotated images and must predict the rotation angle through interactive use of a rotation tool. This multi-turn interaction allows the model to refine its predictions iteratively.
+
+### Reward Shaping Effects
+
+We explored two different reward functions to understand how reward design influences learned behavior:
+
+1. **Broad Tolerance (0-180°)**: $r(\theta) = \max(0, 1 - \frac{|\theta_{pred} - \theta_{true}|}{180°})$
+   
+   Rewards decrease linearly with angular error up to 180°
+
+2. **Strict Tolerance (0-45°)**: $r(\theta) = \begin{cases} 1 - \frac{|\theta_{pred} - \theta_{true}|}{45°} & \text{if } |\theta_{pred} - \theta_{true}| \leq 45° \\ 0 & \text{otherwise} \end{cases}$
+   
+   Rewards drop to zero beyond 45° error
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/verl_angle.png" title="Angle predictions" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    Predicted angle during training for different settings of rewards and the batch size.
 </div>
+
+### Key Findings
+
+The experiments revealed interesting trade-offs between prediction accuracy and interaction efficiency:
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/verl_num_turns.png" title="Number of turns" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/verl_rewards.png" title="Rewards over training" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Number of turns (left) and the Reward (right) during training for different settings of rewards and the batch size.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+**Strict Rewards (0-45°)**: The model learned to predict angles uniformly across the full range, demonstrating good coverage. However, it developed a tendency to use the tool multiple times per query, suggesting inefficient interaction patterns.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**Small Batch Training**: With smaller batches, the model learned highly efficient behavior—using the tool exactly once per query. But this came at a cost: it converged to always predicting the average angle (~90°), essentially learning a safe but uninformative strategy.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+**Large Batch + Strict Rewards**: This configuration achieved a balanced outcome, maintaining reasonable angle diversity while keeping tool usage relatively efficient.
 
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+These results highlight a fundamental tension in multimodal RL: reward design and training dynamics jointly determine what behaviors emerge. The framework successfully enables tool learning, but achieving desired behavior requires careful tuning of both the reward function and hyperparameters.
