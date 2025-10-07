@@ -97,13 +97,13 @@ ninja.data = [{
           description: "Analysis of Tech channels on YouTube using the videos published between May 2005 and October 2019",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-multimodal-reasoning-through-rl",
-          title: 'Multimodal Reasoning through RL',
+            },},{id: "projects-multimodal-reasoning",
+          title: 'Multimodal Reasoning',
           description: "Trained 3 paradigms of visual reasoning using GRPO",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-multimodal-multi-turn-reasoning",
-          title: 'Multimodal Multi-turn Reasoning',
+            },},{id: "projects-multi-turn-rl",
+          title: 'Multi-turn RL',
           description: "Extended the VeRL framework to support for training multimodal models with reinforcement learning with external tools using images as both inputs and outputs.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
