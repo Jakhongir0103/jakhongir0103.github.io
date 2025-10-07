@@ -102,9 +102,9 @@ ninja.data = [{
           description: "Trained 3 paradigms of visual reasoning using GRPO",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-multimodal-multi-turn-reasoning",
+          title: 'Multimodal Multi-turn Reasoning',
+          description: "Extended the VeRL framework to support for training multimodal models with reinforcement learning with external tools using images as both inputs and outputs.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-project-5",
