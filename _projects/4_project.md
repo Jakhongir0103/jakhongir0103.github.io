@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Multimodal Multi-turn Reasoning
+title: Multi-turn RL
 description: Extended the VeRL framework to support for training multimodal models with reinforcement learning with external tools using images as both inputs and outputs.
-img: assets/img/projects/syrielle_diagram.jpeg
+img: assets/img/projects/verl_thumbnal.png
 importance: 3
 category: research
 code: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
@@ -44,13 +44,17 @@ To validate the framework, we trained [Qwen2.5-VL-3B](https://huggingface.co/Qwe
 
 We explored two different reward functions to understand how reward design influences learned behavior:
 
-1. **Broad Tolerance (0-180°)**: $r(\theta) = \max(0, 1 - \frac{|\theta_{pred} - \theta_{true}|}{180°})$
-   
-   Rewards decrease linearly with angular error up to 180°
+**Broad Tolerance (0-180°)**: Rewards decrease linearly with angular error up to 180°
 
-2. **Strict Tolerance (0-45°)**: $r(\theta) = \begin{cases} 1 - \frac{|\theta_{pred} - \theta_{true}|}{45°} & \text{if } |\theta_{pred} - \theta_{true}| \leq 45° \\ 0 & \text{otherwise} \end{cases}$
-   
-   Rewards drop to zero beyond 45° error
+$$
+r(\theta) = \max(0, 1 - \frac{|\theta_{pred} - \theta_{true}|}{180°})
+$$
+
+**Strict Tolerance (0-45°)**: Rewards drop to zero beyond 45° error
+
+$$
+r(\theta) = \begin{cases} 1 - \frac{|\theta_{pred} - \theta_{true}|}{45°} & \text{if } |\theta_{pred} - \theta_{true}| \leq 45° \\ 0 & \text{otherwise} \end{cases}
+$$
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">

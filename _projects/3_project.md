@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Multimodal Reasoning through RL
+title: Multimodal Reasoning
 description: Trained 3 paradigms of visual reasoning using GRPO
 img: assets/img/projects/syrielle_diagram.jpeg
 importance: 1
