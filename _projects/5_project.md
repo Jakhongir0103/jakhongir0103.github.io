@@ -5,6 +5,7 @@ description: Explored GRPO to enhance visual question answering in vision-langua
 img: assets/img/projects/vi_grounding_overview.jpeg
 importance: 3
 category: university
+pretty_table: true
 report: https://github.com/Jakhongir0103/VLM-R1/blob/main/pdf/Visual_Intelligence_Tech_Report.pdf
 code: https://github.com/Jakhongir0103/VLM-R1
 checkpoints: https://huggingface.co/collections/Jakh0103/visual-intelligence-68398719ee0d35e8b553b5c9
@@ -72,13 +73,11 @@ Our work approach tackles five distinct research questions through targeted expe
 
 Our alignment analysis reveals a concerning trade-off: while GRPO improves task accuracy, it paradoxically decreases reasoning-answer alignment.
 
-<div style="text-align: center;">
 | Model | Reasoning | Accuracy | Alignment |
-|-------|-----------|----------|-----------|
+|:-------|:-----------|:----------:|:-----------:|
 | Qwen-Instruct | ✓ | 70.59% | **88.29%** |
 | Qwen-SFT | ✗ | 84.12% | — |
 | Qwen-GRPO | ✓ | **86.47%** | 82.86% |
-</div>
 
 GRPO training achieves higher accuracy (86.47% vs 84.12%) but reduces alignment by approximately 6%, suggesting that detailed reasoning traces may reflect pattern-matching rather than genuine logical inference.
 
@@ -88,7 +87,7 @@ Our two-stage grounding approach demonstrates strong improvements, particularly 
 
 <div style="text-align: center;">
 | Methods | Accuracy Reward | Format Reward | IoU Reward | DrivingVQA (OOD) | A-OKVQA (In-Domain) |
-|---------|-----------------|---------------|-----------|------------------|---------------------|
+|:---------|:-----------------|:---------------|:-----------|:------------------:|:---------------------:|
 | SFT-1 | — | — | — | 54.47 | 88.03 |
 | SFT-10 | — | — | — | 51.91 | 85.36 |
 | GRPO | ✓ | ✓ | ✗ | 57.89 | **88.56** |
@@ -104,7 +103,7 @@ Training on synthetic Rel3D data did not transfer effectively to real-world task
 
 <div style="text-align: center;">
 | Methods | Training Data | Augmented | Rel3D | SpatialSense |
-|---------|---------------|-----------|-------|--------------|
+|:---------|:--------------|:-----------|:-------:|:--------------:|
 | SFT-2 | Rel3D | ✗ | 53.6% | 50.8% |
 | SFT-50 | Rel3D | ✗ | **55.4%** | 46.8% |
 | GRPO | Rel3D | ✗ | 50.9% | 48.2% |
@@ -120,7 +119,7 @@ VLMs demonstrated unexpected robustness to dataset-induced bias:
 
 <div style="text-align: center;">
 | Train Data | Qwen-SFT | Qwen-GRPO |
-|-----------|----------|----------|
+|:-----------|:---------:|:----------:|
 | VSR | 82.0 | **84.8** |
 | Biased VSR | **84.6** | 82.3 |
 | Strongly Biased VSR | 79.9 | **80.7** |
