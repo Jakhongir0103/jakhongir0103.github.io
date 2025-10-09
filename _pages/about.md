@@ -8,11 +8,11 @@ profile:
   align: right
   image: profile.png
   image_circular: true # crops the image to make it circular
-  more_info: 
+  more_info: Can I use this space for the contact icons?
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 other_contributions: true # includes papers marked as other_contrib={true}
-social: false # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -25,7 +25,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I research large language and vision models as an MSc student at [EPFL](https://www.epfl.ch/en/). I’m fortunate to have worked at the [NLP](), [DHLAB](), [LINX]() labs and also at [SwissAI](). I have done my Bachelor’s at <a href='https://www.polito.it/'>Politecnico di Torino</a>.
+I research large language and vision models as an MSc student at [EPFL](https://www.epfl.ch/en/). I’m fortunate to have worked at the [NLP](https://nlp.epfl.ch/), [DHLAB](https://www.epfl.ch/labs/dhlab/), [LINX](https://www.epfl.ch/labs/linx/) labs and also at [SwissAI](https://www.swiss-ai.org/) and [Logitech](https://www.logitech.com/). I have done my Bachelor’s at [Politecnico di Torino](https://www.polito.it/).
 
 #### Research Interests
 I research building inclusive, multimodal reasoning AI systems that work for everyone. Below are some areas I've been working on:
@@ -36,8 +36,8 @@ I research building inclusive, multimodal reasoning AI systems that work for eve
   <!-- - COLM workshop (annotations, models) -->
 
 - **Multimodal Reasoning:** Models need to reason across modalities, not just text, to handle real-world scenarios
-  - Grounded multimodal reasoning: Bounding boxes based reasoning 
-  - Tool-augmented visual reasoning: Multi-turn VLMs training with RL
+  - [Multimodal reasoning](https://jakhongir0103.github.io/projects/3_project/): Bounding boxes based multimodal reasoning 
+  - [Tool-augmented visual reasoning](https://jakhongir0103.github.io/projects/4_project/): Multi-turn VLMs training with RL
   - GUI agents: Building autonomous agents for mouse/keyboard operations (ongoing)
 
 - **Efficient Reasoning:** As we scale to multimodal scenarios, we need computationally efficient reasoning to make deployment practical
