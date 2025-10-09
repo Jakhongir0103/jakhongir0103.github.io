@@ -85,7 +85,6 @@ GRPO training achieves higher accuracy (86.47% vs 84.12%) but reduces alignment 
 
 Our two-stage grounding approach demonstrates strong improvements, particularly on out-of-domain data:
 
-<div style="text-align: center;">
 | Methods | Accuracy Reward | Format Reward | IoU Reward | DrivingVQA (OOD) | A-OKVQA (In-Domain) |
 |:---------|:-----------------|:---------------|:-----------|:------------------:|:---------------------:|
 | SFT-1 | — | — | — | 54.47 | 88.03 |
@@ -93,7 +92,6 @@ Our two-stage grounding approach demonstrates strong improvements, particularly 
 | GRPO | ✓ | ✓ | ✗ | 57.89 | **88.56** |
 | GRPO | ✓ | ✗ | ✓ | **61.31** | 88.3 |
 | GRPO | ✓ | ✓ | ✓ | **61.31** | 88.3 |
-</div>
 
 The most significant gains appear on the out-of-domain [DrivingVQA]() dataset, where GRPO with IoU rewards achieves a 12% improvement over the SFT baseline. The bounding box-based reward proves particularly valuable for generalization.
 
@@ -101,7 +99,6 @@ The most significant gains appear on the out-of-domain [DrivingVQA]() dataset, w
 
 Training on synthetic Rel3D data did not transfer effectively to real-world tasks:
 
-<div style="text-align: center;">
 | Methods | Training Data | Augmented | Rel3D | SpatialSense |
 |:---------|:--------------|:-----------|:-------:|:--------------:|
 | SFT-2 | Rel3D | ✗ | 53.6% | 50.8% |
@@ -109,7 +106,6 @@ Training on synthetic Rel3D data did not transfer effectively to real-world task
 | GRPO | Rel3D | ✗ | 50.9% | 48.2% |
 | GRPO-AUG | Rel3D | ✓ | 48.3% | — |
 | SFT-SS | SpatialSense | ✗ | 37.7% | **76.5%** |
-</div>
 
 Surprisingly, GRPO underperformed SFT on this task, with performance near random chance (50%). Adding depth images and bounding boxes as augmented modalities provided no benefit. The stark difference between performance on SpatialSense (76.5%) versus Rel3D (37.7%) when trained on the respective datasets suggests a substantial domain gap between synthetic and real imagery.
 
@@ -117,13 +113,11 @@ Surprisingly, GRPO underperformed SFT on this task, with performance near random
 
 VLMs demonstrated unexpected robustness to dataset-induced bias:
 
-<div style="text-align: center;">
 | Train Data | Qwen-SFT | Qwen-GRPO |
 |:-----------|:---------:|:----------:|
 | VSR | 82.0 | **84.8** |
 | Biased VSR | **84.6** | 82.3 |
 | Strongly Biased VSR | 79.9 | **80.7** |
-</div>
 
 Even when introducing extreme textual bias (achieving 100% accuracy on a text-only classifier), model performance remained largely stable. GRPO provided no significant advantage over SFT in mitigating bias. These results suggest that VLMs' pre-training and instruction tuning make them inherently robust to spurious correlations.
 
