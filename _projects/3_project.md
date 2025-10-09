@@ -18,7 +18,7 @@ code: https://github.com/Jakhongir0103/multimodal_cot
   {% endif %}
   {% if page.code %}
     <a href="{{ page.code }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fas fa-file-pdf"></i> Code
+      <i class="fab fa-github"></i> Code
     </a>
   {% endif %}
 </div>
