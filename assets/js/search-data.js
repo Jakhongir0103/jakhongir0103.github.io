@@ -104,12 +104,12 @@ ninja.data = [{
               window.location.href = "/projects/3_project/";
             },},{id: "projects-multi-turn-rl",
           title: 'Multi-turn RL',
-          description: "Extended the VeRL framework to support for training multimodal models with reinforcement learning with external tools using images as both inputs and outputs.",
+          description: "Extended the VeRL framework to support for training multimodal models with multi-turn reinforcement learning with external tools using images as both inputs and outputs.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+            },},{id: "projects-visual-reasoning",
+          title: 'Visual Reasoning',
+          description: "Explored GRPO to enhance visual question answering in vision-language models",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
             },},{id: "projects-project-6",
