@@ -51,10 +51,10 @@ Our work approach tackles five distinct research questions through targeted expe
 **Synthetic-to-Real Generalization.** We trained models on the synthetic [Rel3D]() dataset and evaluated on both Rel3D and the real-world [SpatialSense]() dataset to assess transfer learning capabilities. We also experimented with augmented inputs including depth images and bounding boxes.
 
 <div class="row">
-    <div class="col-sm-6 mt-3 mt-md-0">
+    <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/vi_Rel3Dexample.png" title="Rel3D example" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-6 mt-3 mt-md-0">
+    <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/vi_SpatialSenseexample.png" title="SpatialSense example" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
