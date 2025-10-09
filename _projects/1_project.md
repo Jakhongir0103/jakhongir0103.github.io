@@ -84,6 +84,7 @@ These complementary methods allow us to assess whether the model truly learned t
 
 Our experiments revealed several key findings across four test datasets (ARC, MMLU, SciQ, EPFL). The table below shows accuracy scores using Method 1 (Token Distribution):
 
+<div style="text-align: center;">
 | Model | ARC | MMLU | SciQ | EPFL |
 |-------|-----|------|------|------|
 | GalactiTA (DPO only) | 29.24% | 29.03% | 41.31% | 27.32% |
@@ -93,6 +94,7 @@ Our experiments revealed several key findings across four test datasets (ARC, MM
 | GalactiTA (RAG + RAG) | 29.67% | 30.97% | 45.47% | 31.58% |
 | TinyLlama | 24.34% | 25.16% | 24.00% | 36.84% |
 | TinyLlama (+ RAG) | 25.20% | 22.58% | 25.80% | **38.60%** |
+</div>
 
 **MCQA-tuning was highly effective**: The model learned to predict single letters accurately, with Method 1 and Method 2 scores matching perfectly after MCQA-tuning. This demonstrates that the model genuinely learned the task structure rather than exploiting shortcuts.
 

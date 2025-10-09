@@ -40,7 +40,7 @@ The framework is designed for extensibility—adding new tools requires only imp
 
 To validate the framework, we trained [Qwen2.5-VL-3B](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) on a rotation estimation task. The model receives randomly rotated images and must predict the rotation angle through interactive use of a rotation tool. This multi-turn interaction allows the model to refine its predictions iteratively.
 
-### Reward Shaping Effects
+#### Reward Shaping Effects
 
 We explored two different reward functions to understand how reward design influences learned behavior:
 
@@ -65,7 +65,7 @@ $$
     Predicted angle during training for different settings of rewards and the batch size.
 </div>
 
-### Key Findings
+#### Key Findings
 
 The experiments revealed interesting trade-offs between prediction accuracy and interaction efficiency:
 
