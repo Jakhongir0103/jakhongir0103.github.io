@@ -25,15 +25,15 @@ code: https://github.com/Jakhongir0103/mountain-car-reinforcement-learning
 
 The [Mountain Car](https://gymnasium.farama.org/environments/classic_control/mountain_car/) environment presents a classic reinforcement learning challenge where an agent must learn to drive a car up a steep hill by building momentum through strategic back-and-forth movements. The sparse reward structure (only -1 per timestep with no intermediate feedback) makes this seemingly simple task surprisingly difficult for standard RL algorithms. We explored both model-free (DQN with auxiliary rewards) and model-based (Dyna-Q) approaches to overcome this challenge.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_2.1.png" title="Mountain Car Environment" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_2.2.png" title="Random Agent Performance" class="img-fluid rounded z-depth-1" %}
-    </div>
+<div class="row justify-content-center">
+  <div class="col-10 col-md-8 mt-3">
+    {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_2.1.png" title="Mountain Car Environment" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-10 col-md-8 mt-3">
+    {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_2.2.png" title="Random Agent Performance" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
-<div class="caption">
+<div class="caption text-center mt-2">
     Left: The Mountain Car environment with the car starting at the bottom of the valley. Right: Episode duration when playing randomly - the agent never succeeds and always hits the 200 timestep limit.
 </div>
 
@@ -75,7 +75,7 @@ We also implemented Dyna-Q$^{[2]}$, which combines model-free and model-based le
         {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.4-duration.png" title="DQN with RND" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_4 - medium bins episode duration 1.png" title="Dyna-Q Performance" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_4-large_bins_episode_duration_1.png" title="Dyna-Q Performance" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -107,7 +107,7 @@ Dyna-Q's model-based approach allows it to explore the state space efficiently t
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/mountain_car_4. q heat map.png" title="Dyna-Q Learned Q-values" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/projects/mountain_car_4-q_heat_map.png" title="Dyna-Q Learned Q-values" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">

@@ -40,18 +40,18 @@ Our work approach tackles five distinct research questions through targeted expe
 
 **Grounded Reasoning.** As illustrated in the methodology overview below, we employed a two-stage training approach: first, supervised fine-tuning (SFT) to teach the model to generate bounding boxes within reasoning chains, followed by GRPO$^{[1]}$ training with three reward functions (accuracy, format consistency, and IoU scores).
 
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/vi_grounding_overview.jpeg" title="Grounded reasoning methodology" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">
+<div class="caption text-center mt-2">
     Two-stage training approach for grounded reasoning: SFT warmup followed by GRPO with structured rewards.
 </div>
 
 **Synthetic-to-Real Generalization.** We trained models on the synthetic [Rel3D]() dataset and evaluated on both Rel3D and the real-world [SpatialSense]() dataset to assess transfer learning capabilities. We also experimented with augmented inputs including depth images and bounding boxes.
 
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/vi_Rel3Dexample.png" title="Rel3D example" class="img-fluid rounded z-depth-1" %}
     </div>
@@ -59,7 +59,7 @@ Our work approach tackles five distinct research questions through targeted expe
         {% include figure.liquid loading="eager" path="assets/img/projects/vi_SpatialSenseexample.png" title="SpatialSense example" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">
+<div class="caption text-center mt-2">
     Left: Rel3D synthetic dataset features minimally contrastive 3D rendered pairs. Right: SpatialSense real-world dataset shows natural photography.
 </div>
 
