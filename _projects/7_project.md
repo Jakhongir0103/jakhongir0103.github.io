@@ -1,81 +1,69 @@
 ---
 layout: page
-title: project 7
-description: with background image
-img: assets/img/4.jpg
-importance: 1
-category: work
-related_publications: true
+title: Segmentation and Classification
+description: Using classic computer vision techniques to segment and extract, and deep learning for the classification
+img: assets/img/projects/coin_thumbnail.png
+importance: 5
+category: university
+images:
+  slider: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+The project is about on segmenting, extracting and classifying coin images using computer vision techniques, involving both segmentation and classification steps. The images contain coins with 3 backgrounds: neutral, noisy interference, and those containing hands. 
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Methodology
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+#### Segmentation: From Thresholding to Hough Transforms
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+Initially, a straightforward thresholding approach was applied to isolate coins from their backgrounds. However, this simple method struggled with the project's diverse image conditions: neutral backgrounds, noisy interference, and images containing hands. The primary challenges included overlapping backgrounds and inconsistent segmentation across different image types.
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+To overcome these limitations, we enhanced the pipeline with morphological operations like dilation to refine segment boundaries and merged components. The key breakthrough came with implementing the [Hough transform](https://en.wikipedia.org/wiki/Hough_transform) to detect circular coin shapes. This approach proved essential for handling complex cases where coin pieces merged together or adhered to the background, allowing us to reliably extract individual coin regions.
+
+At the end, the segmentation phase consisted of 4 steps:
+1. **Background Detection** - Using standard deviation on specific channels to identify image type (Noisy/Neutral/Hand)
+2. **Edge Detection** - Using Canny algorithm (for hand/neutral) or thresholding on H and S channels (for noisy), adapted per background type
+3. **Morphological Operations** - Dilation and other morphology functions to remove noise, adapted per background type
+4. **Hough Transformation** - Detecting coins as circular objects, separating merged pieces and removing background attachments
+
+Some examples of segmentation are given below for each background type:
+
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/coin_neutral_segmentation.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/coin_noisy_segmentation.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/coin_hand_segmentation.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+</swiper-container>
+
+#### Classification: ResNet50 and Feature Learning
+
+Once coins were successfully segmented, the extracted circular regions were processed for classification. We manually labeled the coins and trained a [ResNet50](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.resnet50.html) architecture to learn discriminative features for each coin class. The model was validated using 5-fold cross-validation to ensure robust performance.
+
+The training process showed steady improvement, with both training and test loss converging and accuracy increasing across folds. The loss and accuracy curves demonstrate successful learning without significant overfitting.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/coin_loss.png" title="Training Metrics" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Loss function and accuracy metrics across training and test sets during 5-fold cross-validation, showing model convergence and generalization.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Results
 
-{% raw %}
+The final model evaluation on held-out test data revealed strong classification performance. Here is the final confucion matrix of the evaluation:.
 
-```html
 <div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+    <div class="col-sm-8 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/assets/img/projects/coin_confusion_matrix.png" title="Confusion Matrix" class="img-fluid rounded z-depth-1" %}
+    </div>
 </div>
-```
+<div class="caption">
+    Confusion matrix from the final model evaluation, showing classification accuracy for each coin class and potential misclassifications.
+</div>
 
-{% endraw %}
+Here are some prediction examples of the final model:
+
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/assets/img/projects/coin_prediction_example_1.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/assets/img/projects/coin_prediction_example_2.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+</swiper-container>

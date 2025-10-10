@@ -58,8 +58,8 @@ For this paradigm, I trained [SEED-LLaMA-8B](https://huggingface.co/AILab-CVC/se
 </div>
 
 <div class="caption text-center mt-2">
-  Top: Example of Multimodal-to-Text reasoning with interleaved bounding boxes grounding attention on specific visual regions.  
-  Bottom: Two-stage training pipeline with SFT warmup followed by GRPO optimization.
+  **Top**: Example of Multimodal-to-Text reasoning with interleaved bounding boxes grounding attention on specific visual regions.  
+  **Bottom**: Two-stage training pipeline with SFT warmup followed by GRPO optimization.
 </div>
 
 **Multimodal-to-Text Reasoning**

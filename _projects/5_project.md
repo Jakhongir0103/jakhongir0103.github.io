@@ -60,7 +60,8 @@ Our work approach tackles five distinct research questions through targeted expe
     </div>
 </div>
 <div class="caption text-center mt-2">
-    Left: Rel3D synthetic dataset features minimally contrastive 3D rendered pairs. Right: SpatialSense real-world dataset shows natural photography.
+    **Left**: Rel3D synthetic dataset features minimally contrastive 3D rendered pairs.
+    **Right**: SpatialSense real-world dataset shows natural photography.
 </div>
 
 **Bias Mitigation.** We created increasingly biased variants of the [Visual Spatial Reasoning]() (VSR) dataset through targeted undersampling and trained models using both SFT and GRPO to measure their robustness to spurious correlations.

@@ -34,7 +34,8 @@ The [Mountain Car](https://gymnasium.farama.org/environments/classic_control/mou
   </div>
 </div>
 <div class="caption text-center mt-2">
-    Left: The Mountain Car environment with the car starting at the bottom of the valley. Right: Episode duration when playing randomly - the agent never succeeds and always hits the 200 timestep limit.
+    **Top**: The Mountain Car environment with the car starting at the bottom of the valley.
+    **Bottom**: Episode duration when playing randomly - the agent never succeeds and always hits the 200 timestep limit.
 </div>
 
 ## Methods
