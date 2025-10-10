@@ -117,9 +117,9 @@ ninja.data = [{
           description: "Handling sparse reward challenges in reinforcement learning using DQN and Dyna-Q algorithms",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+            },},{id: "projects-segmentation-and-classification",
+          title: 'Segmentation and Classification',
+          description: "Using classic computer vision techniques to segment and extract, and deep learning for the classification",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
             },},{id: "projects-project-8",
