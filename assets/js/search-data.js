@@ -112,9 +112,9 @@ ninja.data = [{
           description: "Explored GRPO to enhance visual question answering in vision-language models",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+            },},{id: "projects-mountain-car",
+          title: 'Mountain Car',
+          description: "Handling sparse reward challenges in reinforcement learning using DQN and Dyna-Q algorithms",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
             },},{id: "projects-project-7",
