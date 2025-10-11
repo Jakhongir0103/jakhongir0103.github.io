@@ -147,6 +147,13 @@ ninja.data = [{
           window.open("https://github.com/Jakhongir0103", "_blank");
         },
       },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/jakhongir-saydaliev-0103", "_blank");
+        },
+      },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
