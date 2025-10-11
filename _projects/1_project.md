@@ -5,6 +5,7 @@ description: 1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tu
 img: assets/img/projects/mnlp_raft_workflow.png
 importance: 1
 category: university
+pretty_table: true
 report: https://github.com/Jakhongir0103/sft-dpo-rag-training/blob/main/pdfs/report.pdf
 ---
 

@@ -246,8 +246,8 @@ VLMs demonstrated unexpected robustness to dataset-induced bias:
 
 <table
   data-toggle="table"
-  data-show-columns="true"
-  class="table table-bordered table-hover text-center align-middle col-sm-6"
+  data-show-columns="false"
+  class="table table-bordered table-hover text-center align-middle col-sm-8 justify-content-sm-center"
 >
   <thead>
     <tr>
