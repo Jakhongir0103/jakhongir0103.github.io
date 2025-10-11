@@ -95,6 +95,8 @@ Our experiments revealed several key findings across four test datasets (ARC, MM
 | TinyLlama | 24.34% | 25.16% | 24.00% | 36.84% |
 | TinyLlama (+ RAG) | 25.20% | 22.58% | 25.80% | **38.60%** |
 
+<p></p>
+
 **MCQA-tuning was highly effective**: The model learned to predict single letters accurately, with Method 1 and Method 2 scores matching perfectly after MCQA-tuning. This demonstrates that the model genuinely learned the task structure rather than exploiting shortcuts.
 
 **RAG benefits were dataset-dependent**: For EPFL questions specifically, RAG-tuning with retrieval showed an 11.52% improvement over the baseline when comparing greedy decoding methods. This makes sense because our document collection was curated for EPFL-relevant topics. On datasets where retrieved documents were less relevant (like general science benchmarks), adding RAG during inference sometimes confused the model rather than helping it.
