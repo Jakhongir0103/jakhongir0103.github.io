@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: GalactiTA
 description: 1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tuning on scientific datasets.
 img: assets/img/projects/mnlp_raft_workflow.png

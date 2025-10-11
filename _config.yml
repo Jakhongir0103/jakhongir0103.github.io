@@ -164,6 +164,7 @@ kramdown:
     block:
       line_numbers: false
       start_line: 1
+  hard_wrap: false
 
 # Includes & excludes
 include: ["_pages", "_scripts"]

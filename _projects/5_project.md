@@ -49,7 +49,7 @@ Our work approach tackles five distinct research questions through targeted expe
     Two-stage training approach for grounded reasoning: SFT warmup followed by GRPO with structured rewards.
 </div>
 
-**Synthetic-to-Real Generalization.** We trained models on the synthetic [Rel3D]() dataset and evaluated on both Rel3D and the real-world [SpatialSense]() dataset to assess transfer learning capabilities. We also experimented with augmented inputs including depth images and bounding boxes.
+**Synthetic-to-Real Generalization.** We trained models on the synthetic [Rel3D](https://github.com/princeton-vl/Rel3D) dataset and evaluated on both Rel3D and the real-world [SpatialSense](https://github.com/princeton-vl/SpatialSense) dataset to assess transfer learning capabilities. We also experimented with augmented inputs including depth images and bounding boxes.
 
 <div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0">
@@ -60,13 +60,13 @@ Our work approach tackles five distinct research questions through targeted expe
     </div>
 </div>
 <div class="caption text-center mt-2">
-    **Left**: Rel3D synthetic dataset features minimally contrastive 3D rendered pairs.
-    **Right**: SpatialSense real-world dataset shows natural photography.
+    <b>Left</b>: Rel3D synthetic dataset features minimally contrastive 3D rendered pairs.
+    <b>Right</b>: SpatialSense real-world dataset shows natural photography.
 </div>
 
-**Bias Mitigation.** We created increasingly biased variants of the [Visual Spatial Reasoning]() (VSR) dataset through targeted undersampling and trained models using both SFT and GRPO to measure their robustness to spurious correlations.
+**Bias Mitigation.** We created increasingly biased variants of the [Visual Spatial Reasoning](https://github.com/cambridgeltl/visual-spatial-reasoning) (VSR) dataset through targeted undersampling and trained models using both SFT and GRPO to measure their robustness to spurious correlations.
 
-**Prompt Engineering.** We applied soft prompt tuning using the [PEFT]() library, optimizing learnable token prefixes while keeping base model weights frozen, comparing answer-only and reasoning-chain fine-tuning strategies.
+**Prompt Engineering.** We applied soft prompt tuning using the [PEFT](https://huggingface.co/docs/peft/index) library, optimizing learnable token prefixes while keeping base model weights frozen, comparing answer-only and reasoning-chain fine-tuning strategies.
 
 ## Results
 
@@ -74,11 +74,43 @@ Our work approach tackles five distinct research questions through targeted expe
 
 Our alignment analysis reveals a concerning trade-off: while GRPO improves task accuracy, it paradoxically decreases reasoning-answer alignment.
 
-| Model | Reasoning | Accuracy | Alignment |
-|:-------|:-----------|:----------:|:-----------:|
-| Qwen-Instruct | ✓ | 70.59% | **88.29%** |
-| Qwen-SFT | ✗ | 84.12% | — |
-| Qwen-GRPO | ✓ | **86.47%** | 82.86% |
+<table
+  border="1"
+  cellspacing="0"
+  cellpadding="6"
+  style="text-align: center; border-collapse: collapse;"
+>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Reasoning</th>
+      <th>Accuracy</th>
+      <th>Alignment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Qwen-Instruct</td>
+      <td>✓</td>
+      <td>70.59%</td>
+      <td><b>88.29%</b></td>
+    </tr>
+    <tr>
+      <td>Qwen-SFT</td>
+      <td>✗</td>
+      <td>84.12%</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Qwen-GRPO</td>
+      <td>✓</td>
+      <td><b>86.47%</b></td>
+      <td>82.86%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
 
 GRPO training achieves higher accuracy (86.47% vs 84.12%) but reduces alignment by approximately 6%, suggesting that detailed reasoning traces may reflect pattern-matching rather than genuine logical inference.
 
@@ -86,15 +118,77 @@ GRPO training achieves higher accuracy (86.47% vs 84.12%) but reduces alignment 
 
 Our two-stage grounding approach demonstrates strong improvements, particularly on out-of-domain data:
 
-| Methods | Accuracy Reward | Format Reward | IoU Reward | DrivingVQA (OOD) | A-OKVQA (In-Domain) |
+<table
+  data-toggle="table"
+  data-search="true"
+  data-show-columns="true"
+  class="table table-bordered table-hover text-center align-middle"
+>
+  <thead>
+    <tr>
+      <th>Methods</th>
+      <th>Accuracy Reward</th>
+      <th>Format Reward</th>
+      <th>IoU Reward</th>
+      <th>DrivingVQA (OOD)</th>
+      <th>A-OKVQA (In-Domain)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SFT-1</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>54.47</td>
+      <td>88.03</td>
+    </tr>
+    <tr>
+      <td>SFT-10</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>51.91</td>
+      <td>85.36</td>
+    </tr>
+    <tr>
+      <td>GRPO</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>57.89</td>
+      <td><b>88.56</b></td>
+    </tr>
+    <tr>
+      <td>GRPO</td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>✓</td>
+      <td><b>61.31</b></td>
+      <td>88.3</td>
+    </tr>
+    <tr>
+      <td>GRPO</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td><b>61.31</b></td>
+      <td>88.3</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- | Methods | Accuracy Reward | Format Reward | IoU Reward | DrivingVQA (OOD) | A-OKVQA (In-Domain) |
 |:---------|:-----------------|:---------------|:-----------|:------------------:|:---------------------:|
 | SFT-1 | — | — | — | 54.47 | 88.03 |
 | SFT-10 | — | — | — | 51.91 | 85.36 |
 | GRPO | ✓ | ✓ | ✗ | 57.89 | **88.56** |
 | GRPO | ✓ | ✗ | ✓ | **61.31** | 88.3 |
-| GRPO | ✓ | ✓ | ✓ | **61.31** | 88.3 |
+| GRPO | ✓ | ✓ | ✓ | **61.31** | 88.3 | -->
 
-The most significant gains appear on the out-of-domain [DrivingVQA]() dataset, where GRPO with IoU rewards achieves a 12% improvement over the SFT baseline. The bounding box-based reward proves particularly valuable for generalization.
+<p></p>
+
+The most significant gains appear on the out-of-domain [DrivingVQA](https://huggingface.co/datasets/EPFL-DrivingVQA/DrivingVQA) dataset, where GRPO with IoU rewards achieves a 12% improvement over the SFT baseline. The bounding box-based reward proves particularly valuable for generalization.
 
 #### Synthetic-to-Real Generalization
 
@@ -108,6 +202,8 @@ Training on synthetic Rel3D data did not transfer effectively to real-world task
 | GRPO-AUG | Rel3D | ✓ | 48.3% | — |
 | SFT-SS | SpatialSense | ✗ | 37.7% | **76.5%** |
 
+<p></p>
+
 Surprisingly, GRPO underperformed SFT on this task, with performance near random chance (50%). Adding depth images and bounding boxes as augmented modalities provided no benefit. The stark difference between performance on SpatialSense (76.5%) versus Rel3D (37.7%) when trained on the respective datasets suggests a substantial domain gap between synthetic and real imagery.
 
 #### Bias Mitigation
@@ -119,6 +215,8 @@ VLMs demonstrated unexpected robustness to dataset-induced bias:
 | VSR | 82.0 | **84.8** |
 | Biased VSR | **84.6** | 82.3 |
 | Strongly Biased VSR | 79.9 | **80.7** |
+
+<p></p>
 
 Even when introducing extreme textual bias (achieving 100% accuracy on a text-only classifier), model performance remained largely stable. GRPO provided no significant advantage over SFT in mitigating bias. These results suggest that VLMs' pre-training and instruction tuning make them inherently robust to spurious correlations.
 

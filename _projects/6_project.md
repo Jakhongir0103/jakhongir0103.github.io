@@ -5,6 +5,8 @@ description: Handling sparse reward challenges in reinforcement learning using D
 img: assets/img/projects/mountain_car_gif.gif
 importance: 4
 category: university
+images:
+  slider: true
 report: https://github.com/Jakhongir0103/mountain-car-reinforcement-learning/blob/main/pdf/report.pdf
 code: https://github.com/Jakhongir0103/mountain-car-reinforcement-learning
 ---
@@ -34,8 +36,8 @@ The [Mountain Car](https://gymnasium.farama.org/environments/classic_control/mou
   </div>
 </div>
 <div class="caption text-center mt-2">
-    **Top**: The Mountain Car environment with the car starting at the bottom of the valley.
-    **Bottom**: Episode duration when playing randomly - the agent never succeeds and always hits the 200 timestep limit.
+    <b>Top</b>: The Mountain Car environment with the car starting at the bottom of the valley.
+    <b>Bottom</b>: Episode duration when playing randomly - the agent never succeeds and always hits the 200 timestep limit.
 </div>
 
 ## Methods
@@ -68,51 +70,32 @@ We also implemented Dyna-Q$^{[2]}$, which combines model-free and model-based le
 
 ## Results
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.3-duration.png" title="DQN with Heuristic Reward" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.4-duration.png" title="DQN with RND" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_4-large_bins_episode_duration_1.png" title="Dyna-Q Performance" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+We report the episode duration over training for each method below. Lower value means the model has learned to finish the task faster.
+
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_vanilla.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_heuristic.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_rnd.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_dyna.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+</swiper-container>
+
 <div class="caption">
-    Episode duration over training for different algorithms. Lower duration indicates successful task completion. Both auxiliary reward methods help DQN learn, with RND achieving success slightly earlier (~500 episodes) than the heuristic reward (~600 episodes).
+    Episode duration over training for different algorithms for: (1) Vanilla DQN, (2) DQN with heuristic reward, (3) DQN with RND, (4) Dyna-Q. Lower duration indicates successful task completion. Both auxiliary reward methods help DQN learn, with RND achieving success slightly earlier (~500 episodes) than the heuristic reward (~600 episodes).
 </div>
 
 ### Reward Distribution Analysis
 
-One fascinating insight comes from visualizing where each algorithm accumulates rewards in the state space:
+One fascinating insight comes from visualizing where each algorithm accumulates rewards in the state space. For each of the 4 methods, we report the sum of reward per position and velocity. Position=0.5 is the final state.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.2-reward distribution.png" title="Vanilla DQN" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.3-reward distribution.png" title="Heuristic Rewards" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.4-reward distribution.png" title="RND" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.2-reward distribution.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.3-reward distribution.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.4-reward distribution.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_4-q_heat_map.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+</swiper-container>
+
 <div class="caption">
     Heatmaps showing the sum of rewards at each state (position vs velocity) from the last 10k experiences. The heuristic reward creates a clear gradient leading to the goal, while RND explores more broadly across the state space.
-</div>
-
-### Dyna-Q State Coverage
-
-Dyna-Q's model-based approach allows it to explore the state space efficiently through simulated experiences:
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/mountain_car_4-q_heat_map.png" title="Dyna-Q Learned Q-values" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Learned Q-values for Dyna-Q showing high values at the goal position (0.5) and for high velocities, demonstrating effective exploration of the state space.
 </div>
 
 ## Key Findings
@@ -125,17 +108,13 @@ Dyna-Q's model-based approach allows it to explore the state space efficiently t
 
 4. **Multiple policies emerge**: Interestingly, all successful agents learned to complete the task in approximately two distinct durations (~90 or ~150 steps), suggesting multiple valid strategies for solving the Mountain Car problem.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_4.heat1.png" title="Episode 99" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_4.heat2.png" title="Episode 499" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_4.heat3.png" title="Episode 2998" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
+Below is how the model learns to achieve the task during traning at the episodes 99, 499, and 2998:
+
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_dyna_demo_1.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_dyna_demo_1.png" class="img-fluid rounded z-depth-2" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_dyna_demo_1.png" class="img-fluid rounded z-depth-3" %}</swiper-slide>
+</swiper-container>
 <div class="caption">
     Evolution of Dyna-Q's exploration over training, showing how the agent progressively discovers more of the state space and refines its policy.
 </div>

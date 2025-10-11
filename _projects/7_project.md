@@ -13,7 +13,7 @@ The project is about on segmenting, extracting and classifying coin images using
 
 ## Methodology
 
-#### Segmentation: From Thresholding to Hough Transforms
+#### Segmentation: Hough Transforms
 
 Initially, a straightforward thresholding approach was applied to isolate coins from their backgrounds. However, this simple method struggled with the project's diverse image conditions: neutral backgrounds, noisy interference, and images containing hands. The primary challenges included overlapping backgrounds and inconsistent segmentation across different image types.
 
@@ -33,14 +33,14 @@ Some examples of segmentation are given below for each background type:
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/coin_hand_segmentation.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
 </swiper-container>
 
-#### Classification: ResNet50 and Feature Learning
+#### Classification: ResNet50
 
 Once coins were successfully segmented, the extracted circular regions were processed for classification. We manually labeled the coins and trained a [ResNet50](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.resnet50.html) architecture to learn discriminative features for each coin class. The model was validated using 5-fold cross-validation to ensure robust performance.
 
 The training process showed steady improvement, with both training and test loss converging and accuracy increasing across folds. The loss and accuracy curves demonstrate successful learning without significant overfitting.
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
+    <div class="col-sm-12 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/coin_loss.png" title="Training Metrics" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -54,7 +54,7 @@ The final model evaluation on held-out test data revealed strong classification 
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/assets/img/projects/coin_confusion_matrix.png" title="Confusion Matrix" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/coin_confusion_matrix.png" title="Confusion Matrix" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -64,6 +64,6 @@ The final model evaluation on held-out test data revealed strong classification 
 Here are some prediction examples of the final model:
 
 <swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/assets/img/projects/coin_prediction_example_1.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/assets/img/projects/coin_prediction_example_2.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/coin_prediction_example_1.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/coin_prediction_example_2.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
 </swiper-container>
