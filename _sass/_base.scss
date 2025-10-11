@@ -441,6 +441,49 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Social (under profile photo)
+.profile-social {
+  text-align: center;
+  margin-top: 1rem;
+
+  .contact-icons {
+    font-size: 1.5rem;
+
+    a {
+      display: inline-block;
+      margin: 0 0.3rem 0.5rem 0.3rem;
+
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        image {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+
+      i::before {
+        color: var(--global-text-color);
+        transition-property: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        i::before {
+          color: var(--global-theme-color);
+        }
+      }
+    }
+  }
+}
+
 .wechat-modal {
   display: none;
   position: fixed;
