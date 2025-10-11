@@ -75,10 +75,9 @@ Our work approach tackles five distinct research questions through targeted expe
 Our alignment analysis reveals a concerning trade-off: while GRPO improves task accuracy, it paradoxically decreases reasoning-answer alignment.
 
 <table
-  border="1"
-  cellspacing="0"
-  cellpadding="6"
-  style="text-align: center; border-collapse: collapse;"
+  data-toggle="table"
+  data-show-columns="true"
+  class="table table-bordered table-hover text-center align-middle"
 >
   <thead>
     <tr>
@@ -120,7 +119,6 @@ Our two-stage grounding approach demonstrates strong improvements, particularly 
 
 <table
   data-toggle="table"
-  data-search="true"
   data-show-columns="true"
   class="table table-bordered table-hover text-center align-middle"
 >
@@ -178,14 +176,6 @@ Our two-stage grounding approach demonstrates strong improvements, particularly 
   </tbody>
 </table>
 
-<!-- | Methods | Accuracy Reward | Format Reward | IoU Reward | DrivingVQA (OOD) | A-OKVQA (In-Domain) |
-|:---------|:-----------------|:---------------|:-----------|:------------------:|:---------------------:|
-| SFT-1 | — | — | — | 54.47 | 88.03 |
-| SFT-10 | — | — | — | 51.91 | 85.36 |
-| GRPO | ✓ | ✓ | ✗ | 57.89 | **88.56** |
-| GRPO | ✓ | ✗ | ✓ | **61.31** | 88.3 |
-| GRPO | ✓ | ✓ | ✓ | **61.31** | 88.3 | -->
-
 <p></p>
 
 The most significant gains appear on the out-of-domain [DrivingVQA](https://huggingface.co/datasets/EPFL-DrivingVQA/DrivingVQA) dataset, where GRPO with IoU rewards achieves a 12% improvement over the SFT baseline. The bounding box-based reward proves particularly valuable for generalization.
@@ -194,14 +184,58 @@ The most significant gains appear on the out-of-domain [DrivingVQA](https://hugg
 
 Training on synthetic Rel3D data did not transfer effectively to real-world tasks:
 
-| Methods | Training Data | Augmented | Rel3D | SpatialSense |
-|:---------|:--------------|:-----------|:-------:|:--------------:|
-| SFT-2 | Rel3D | ✗ | 53.6% | 50.8% |
-| SFT-50 | Rel3D | ✗ | **55.4%** | 46.8% |
-| GRPO | Rel3D | ✗ | 50.9% | 48.2% |
-| GRPO-AUG | Rel3D | ✓ | 48.3% | — |
-| SFT-SS | SpatialSense | ✗ | 37.7% | **76.5%** |
-
+<table
+  data-toggle="table"
+  data-show-columns="true"
+  class="table table-bordered table-hover text-center align-middle"
+>
+  <thead>
+    <tr>
+      <th>Methods</th>
+      <th>Training Data</th>
+      <th>Augmented</th>
+      <th>Rel3D</th>
+      <th>SpatialSense</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SFT-2</td>
+      <td>Rel3D</td>
+      <td>✗</td>
+      <td>53.6%</td>
+      <td>50.8%</td>
+    </tr>
+    <tr>
+      <td>SFT-50</td>
+      <td>Rel3D</td>
+      <td>✗</td>
+      <td><b>55.4%</b></td>
+      <td>46.8%</td>
+    </tr>
+    <tr>
+      <td>GRPO</td>
+      <td>Rel3D</td>
+      <td>✗</td>
+      <td>50.9%</td>
+      <td>48.2%</td>
+    </tr>
+    <tr>
+      <td>GRPO-AUG</td>
+      <td>Rel3D</td>
+      <td>✓</td>
+      <td>48.3%</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>SFT-SS</td>
+      <td>SpatialSense</td>
+      <td>✗</td>
+      <td>37.7%</td>
+      <td><b>76.5%</b></td>
+    </tr>
+  </tbody>
+</table>
 <p></p>
 
 Surprisingly, GRPO underperformed SFT on this task, with performance near random chance (50%). Adding depth images and bounding boxes as augmented modalities provided no benefit. The stark difference between performance on SpatialSense (76.5%) versus Rel3D (37.7%) when trained on the respective datasets suggests a substantial domain gap between synthetic and real imagery.
@@ -210,12 +244,36 @@ Surprisingly, GRPO underperformed SFT on this task, with performance near random
 
 VLMs demonstrated unexpected robustness to dataset-induced bias:
 
-| Train Data | Qwen-SFT | Qwen-GRPO |
-|:-----------|:---------:|:----------:|
-| VSR | 82.0 | **84.8** |
-| Biased VSR | **84.6** | 82.3 |
-| Strongly Biased VSR | 79.9 | **80.7** |
-
+<table
+  data-toggle="table"
+  data-show-columns="true"
+  class="table table-bordered table-hover text-center align-middle col-sm-6"
+>
+  <thead>
+    <tr>
+      <th>Train Data</th>
+      <th>Qwen-SFT</th>
+      <th>Qwen-GRPO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VSR</td>
+      <td>82.0</td>
+      <td><b>84.8</b></td>
+    </tr>
+    <tr>
+      <td>Biased VSR</td>
+      <td><b>84.6</b></td>
+      <td>82.3</td>
+    </tr>
+    <tr>
+      <td>Strongly Biased VSR</td>
+      <td>79.9</td>
+      <td><b>80.7</b></td>
+    </tr>
+  </tbody>
+</table>
 <p></p>
 
 Even when introducing extreme textual bias (achieving 100% accuracy on a text-only classifier), model performance remained largely stable. GRPO provided no significant advantage over SFT in mitigating bias. These results suggest that VLMs' pre-training and instruction tuning make them inherently robust to spurious correlations.

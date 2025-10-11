@@ -1,12 +1,11 @@
 ---
-layout: post
+layout: page
 title: GalactiTA
 description: 1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tuning on scientific datasets.
 img: assets/img/projects/mnlp_raft_workflow.png
 importance: 1
 category: university
 report: https://github.com/Jakhongir0103/sft-dpo-rag-training/blob/main/pdfs/report.pdf
-pretty_table: true
 ---
 
 <!-- Project Links/Buttons -->
@@ -85,16 +84,72 @@ These complementary methods allow us to assess whether the model truly learned t
 
 Our experiments revealed several key findings across four test datasets (ARC, MMLU, SciQ, EPFL). The table below shows accuracy scores using Method 1 (Token Distribution):
 
-| Model | ARC | MMLU | SciQ | EPFL |
-|:-------|:-----:|:------:|:------:|:------:|
-| GalactiTA (DPO only) | 29.24% | 29.03% | 41.31% | 27.32% |
-| GalactiTA (MCQA-tuned) | **35.06%** | 31.61% | **60.50%** | 35.59% |
-| GalactiTA (MCQA + RAG) | 33.00% | **32.90%** | 53.22% | 34.59% |
-| GalactiTA (RAG-tuned) | 31.01% | 29.68% | 47.35% | 30.83% |
-| GalactiTA (RAG + RAG) | 29.67% | 30.97% | 45.47% | 31.58% |
-| TinyLlama | 24.34% | 25.16% | 24.00% | 36.84% |
-| TinyLlama (+ RAG) | 25.20% | 22.58% | 25.80% | **38.60%** |
-
+<table
+  data-toggle="table"
+  data-show-columns="true"
+  class="table table-bordered table-hover text-center align-middle"
+>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>ARC</th>
+      <th>MMLU</th>
+      <th>SciQ</th>
+      <th>EPFL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GalactiTA (DPO only)</td>
+      <td>29.24%</td>
+      <td>29.03%</td>
+      <td>41.31%</td>
+      <td>27.32%</td>
+    </tr>
+    <tr>
+      <td>GalactiTA (MCQA-tuned)</td>
+      <td><b>35.06%</b></td>
+      <td>31.61%</td>
+      <td><b>60.50%</b></td>
+      <td>35.59%</td>
+    </tr>
+    <tr>
+      <td>GalactiTA (MCQA + RAG)</td>
+      <td>33.00%</td>
+      <td><b>32.90%</b></td>
+      <td>53.22%</td>
+      <td>34.59%</td>
+    </tr>
+    <tr>
+      <td>GalactiTA (RAG-tuned)</td>
+      <td>31.01%</td>
+      <td>29.68%</td>
+      <td>47.35%</td>
+      <td>30.83%</td>
+    </tr>
+    <tr>
+      <td>GalactiTA (RAG + RAG)</td>
+      <td>29.67%</td>
+      <td>30.97%</td>
+      <td>45.47%</td>
+      <td>31.58%</td>
+    </tr>
+    <tr>
+      <td>TinyLlama</td>
+      <td>24.34%</td>
+      <td>25.16%</td>
+      <td>24.00%</td>
+      <td>36.84%</td>
+    </tr>
+    <tr>
+      <td>TinyLlama (+ RAG)</td>
+      <td>25.20%</td>
+      <td>22.58%</td>
+      <td>25.80%</td>
+      <td><b>38.60%</b></td>
+    </tr>
+  </tbody>
+</table>
 <p></p>
 
 **MCQA-tuning was highly effective**: The model learned to predict single letters accurately, with Method 1 and Method 2 scores matching perfectly after MCQA-tuning. This demonstrates that the model genuinely learned the task structure rather than exploiting shortcuts.

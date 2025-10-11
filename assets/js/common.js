@@ -53,7 +53,18 @@ $(document).ready(function () {
   });
 
   // trigger popovers
-  $('[data-toggle="popover"]').popover({
-    trigger: "hover",
-  });
+  setTimeout(function() {
+    $('[data-toggle="popover"]').each(function() {
+      var $this = $(this);
+      // Destroy any existing popover first
+      $this.popover('dispose');
+      // Initialize new popover
+      $this.popover({
+        trigger: "hover",
+        html: true,
+        placement: $this.data('placement') || 'top',
+        container: 'body'
+      });
+    });
+  }, 100);
 });
