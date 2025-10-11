@@ -138,12 +138,10 @@
       {% endif %}
       {% if entry.annotation %}
         <i
-          class="fa-solid fa-circle-info ml-1"
-          data-toggle="popover"
-          data-placement="top"
-          data-html="true"
-          data-content="{{ entry.annotation | escape_once }}"
+          class="fa-solid fa-circle-info ml-1 annotation-icon"
+          data-annotation="{{ entry.annotation | escape_once }}"
           title=""
+          style="cursor: pointer; color: #007bff;"
         >
         </i>
       {% endif %}
