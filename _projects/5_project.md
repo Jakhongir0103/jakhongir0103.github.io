@@ -5,7 +5,6 @@ description: Explored GRPO to enhance visual question answering in vision-langua
 img: assets/img/projects/vi_grounding_overview.jpeg
 importance: 3
 category: university
-pretty_table: true
 report: https://github.com/Jakhongir0103/VLM-R1/blob/main/pdf/Visual_Intelligence_Tech_Report.pdf
 code: https://github.com/Jakhongir0103/VLM-R1
 checkpoints: https://huggingface.co/collections/Jakh0103/visual-intelligence-68398719ee0d35e8b553b5c9
@@ -76,7 +75,6 @@ Our alignment analysis reveals a concerning trade-off: while GRPO improves task 
 
 <table
   data-toggle="table"
-  data-show-columns="true"
   class="table table-bordered table-hover text-center align-middle"
 >
   <thead>
@@ -119,7 +117,6 @@ Our two-stage grounding approach demonstrates strong improvements, particularly 
 
 <table
   data-toggle="table"
-  data-show-columns="true"
   class="table table-bordered table-hover text-center align-middle"
 >
   <thead>
@@ -186,7 +183,6 @@ Training on synthetic Rel3D data did not transfer effectively to real-world task
 
 <table
   data-toggle="table"
-  data-show-columns="true"
   class="table table-bordered table-hover text-center align-middle"
 >
   <thead>
@@ -246,8 +242,7 @@ VLMs demonstrated unexpected robustness to dataset-induced bias:
 
 <table
   data-toggle="table"
-  data-show-columns="false"
-  class="table table-bordered table-hover text-center align-middle col-sm-8 justify-content-sm-center"
+  class="table table-bordered table-hover text-center align-middle"
 >
   <thead>
     <tr>

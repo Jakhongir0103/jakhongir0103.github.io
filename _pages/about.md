@@ -8,7 +8,7 @@ profile:
   align: right
   image: profile.png
   image_circular: true # crops the image to make it circular
-  more_info: Can I use this space for the contact icons?
+  more_info:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 other_contributions: true # includes papers marked as other_contrib={true}
