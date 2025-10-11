@@ -3,8 +3,8 @@
     {% assign latest_posts_size = site.posts | size %}
     <div
       class="table-responsive"
-      {% if page.latest_posts.scrollable and latest_posts_size > 3 %}
-        style="max-height: 60vw"
+      {% if page.latest_posts.scrollable and latest_posts_size > page.latest_posts.limit %}
+        style="max-height: 60vw; overflow-y: auto;"
       {% endif %}
     >
       <table class="table table-sm table-borderless">
