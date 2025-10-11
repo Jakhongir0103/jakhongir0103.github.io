@@ -56,12 +56,26 @@ $(document).ready(function () {
   function createAnnotationTooltip() {
     $('.annotation-icon').each(function() {
       var $icon = $(this);
-      var annotation = $icon.data('annotation');
       
-      if (annotation) {
+      // Try multiple ways to get the annotation text
+      var annotation = $icon.data('annotation') || 
+                      $icon.attr('data-annotation') || 
+                      $icon.attr('data-content');
+      
+      console.log('Annotation found:', annotation); // Debug log
+      console.log('Icon element:', $icon[0]); // Debug log
+      console.log('All attributes:', $icon[0].attributes); // Debug log
+      
+      // Fallback for testing
+      if (!annotation || annotation.trim() === '') {
+        annotation = '* Equal Contribution (fallback)';
+        console.log('Using fallback annotation:', annotation);
+      }
+      
+      if (annotation && annotation.trim() !== '') {
         // Create tooltip element
         var tooltip = $('<div class="custom-tooltip"></div>')
-          .text(annotation)
+          .html(annotation) // Use html() instead of text() to preserve any HTML
           .css({
             'position': 'absolute',
             'background-color': '#333',
@@ -74,7 +88,10 @@ $(document).ready(function () {
             'pointer-events': 'none',
             'opacity': '0',
             'transition': 'opacity 0.2s ease-in-out',
-            'box-shadow': '0 2px 8px rgba(0,0,0,0.2)'
+            'box-shadow': '0 2px 8px rgba(0,0,0,0.2)',
+            'max-width': '300px',
+            'word-wrap': 'break-word',
+            'white-space': 'normal'
           });
         
         $('body').append(tooltip);
@@ -82,9 +99,12 @@ $(document).ready(function () {
         // Show tooltip on hover
         $icon.on('mouseenter', function(e) {
           var iconOffset = $icon.offset();
+          var tooltipWidth = tooltip.outerWidth();
+          var tooltipHeight = tooltip.outerHeight();
+          
           tooltip.css({
-            'left': iconOffset.left + $icon.outerWidth() / 2 - tooltip.outerWidth() / 2 + 'px',
-            'top': iconOffset.top - tooltip.outerHeight() - 8 + 'px',
+            'left': (iconOffset.left + $icon.outerWidth() / 2 - tooltipWidth / 2) + 'px',
+            'top': (iconOffset.top - tooltipHeight - 8) + 'px',
             'opacity': '1'
           });
         });
@@ -93,6 +113,15 @@ $(document).ready(function () {
         $icon.on('mouseleave', function() {
           tooltip.css('opacity', '0');
         });
+        
+        // Also hide tooltip when mouse leaves the tooltip itself
+        tooltip.on('mouseleave', function() {
+          tooltip.css('opacity', '0');
+        });
+        
+        console.log('Tooltip created for:', annotation); // Debug log
+      } else {
+        console.log('No annotation found for icon:', $icon); // Debug log
       }
     });
   }
