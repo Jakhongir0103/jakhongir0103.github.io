@@ -2,7 +2,7 @@
 layout: page
 title: Stance Detection
 description: Fine-tuning Large Language Models for argument stance detection in unseen domains
-img: assets/img/stance_detection.jpg
+img: assets/img/projects/ml2_selected_models_f1.png
 importance: 6
 category: university
 report: https://github.com/Jakhongir0103/Machine-Learning_EPFL/blob/master/projects/project2/project2_report.pdf
