@@ -87,7 +87,22 @@ ninja.data = [{
           section: "News",},{id: "news-joined-logitech-as-an-ml-research-intern-to-work-on-computer-use-agents",
           title: 'Joined Logitech as an ML Research Intern to work on Computer Use Agents...',
           description: "",
-          section: "News",},{id: "projects-galactita",
+          section: "News",},{id: "projects-project-9",
+          title: 'project 9',
+          description: "another project with an image 🎉",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/10_project/";
+            },},{id: "projects-project-9",
+          title: 'project 9',
+          description: "another project with an image 🎉",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/11_project/";
+            },},{id: "projects-project-9",
+          title: 'project 9',
+          description: "another project with an image 🎉",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/12_project/";
+            },},{id: "projects-galactita",
           title: 'GalactiTA',
           description: "1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tuning on scientific datasets.",
           section: "Projects",handler: () => {
@@ -127,9 +142,9 @@ ninja.data = [{
           description: "Fine-tuning Large Language Models for argument stance detection in unseen domains",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+            },},{id: "projects-predicting-cardiovascular-diseases",
+          title: 'Predicting Cardiovascular Diseases',
+          description: "Using machine learning on behavioral risk factor data to predict heart disease",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{
