@@ -122,9 +122,9 @@ ninja.data = [{
           description: "Using classic computer vision techniques to segment and extract, and deep learning for the classification",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
+            },},{id: "projects-stance-detection",
+          title: 'Stance Detection',
+          description: "Fine-tuning Large Language Models for argument stance detection in unseen domains",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
             },},{id: "projects-project-9",
