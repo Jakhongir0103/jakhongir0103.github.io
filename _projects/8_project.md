@@ -49,7 +49,7 @@ A key difference: SemEval uses short targets (1-2 words) while IBM-Debater uses 
 We tested LoRA ranks from 1 to 64 on the full SemEval dataset. The results showed that Mistral consistently outperformed Llama and Phi, but interestingly, there was no clear trend with rank size - lower ranks performed just as well as higher ones.
 
 <div class="row">
-    <div class="col-sm mt-8 mt-md-0">
+    <div class="col-sm-8 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/ml2_rank_experiments.png" title="LoRA rank comparison" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -62,7 +62,7 @@ We tested LoRA ranks from 1 to 64 on the full SemEval dataset. The results showe
 We tested how well models perform when fine-tuned on limited data (1%, 10%, and 50% of the training set). Mistral again proved superior, especially in low-data scenarios. We found that rank choice depends on data volume - rank 1 works better with less data, while rank 8 improves with more data (likely because higher ranks overfit small datasets).
 
 <div class="row">
-    <div class="col-sm mt-8 mt-md-0">
+    <div class="col-sm-8 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/ml2_train_percentage_models.png" title="Data regime experiments" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -75,7 +75,7 @@ We tested how well models perform when fine-tuned on limited data (1%, 10%, and 
 Our best model - Mistral with LoRA rank 16, trained on 70% of both SemEval and IBM-Debater datasets - significantly outperformed all baselines:
 
 <div class="row">
-    <div class="col-sm mt-10 mt-md-0">
+    <div class="col-sm-10 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/ml2_selected_models_f1.png" title="F1 scores across training configurations" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -166,7 +166,7 @@ Our best model - Mistral with LoRA rank 16, trained on 70% of both SemEval and I
 3. **Fine-tuning on SemEval and extrapolating to IBM might lead to better results** than directly fine-tuning on IBM alone.
 
 <div class="row">
-    <div class="col-sm mt-10 mt-md-0">
+    <div class="col-sm-10 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/ml2_confusion_matrix_r16_semeval.png" title="Confusion matrices" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
