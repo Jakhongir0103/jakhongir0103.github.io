@@ -50,7 +50,7 @@ We tested LoRA ranks from 1 to 64 on the full SemEval dataset. The results showe
 
 <div class="row">
     <div class="col-sm mt-8 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/ml2_rank_experiments.pdf" title="LoRA rank comparison" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/ml2_rank_experiments.png" title="LoRA rank comparison" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -63,7 +63,7 @@ We tested how well models perform when fine-tuned on limited data (1%, 10%, and 
 
 <div class="row">
     <div class="col-sm mt-8 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/ml2_train_percentage_models.pdf" title="Data regime experiments" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/ml2_train_percentage_models.png" title="Data regime experiments" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -76,7 +76,7 @@ Our best model - Mistral with LoRA rank 16, trained on 70% of both SemEval and I
 
 <div class="row">
     <div class="col-sm mt-10 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/ml2_selected_models_f1.pdf" title="F1 scores across training configurations" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/ml2_selected_models_f1.png" title="F1 scores across training configurations" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
