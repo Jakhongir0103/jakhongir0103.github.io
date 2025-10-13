@@ -87,9 +87,9 @@ ninja.data = [{
           section: "News",},{id: "news-joined-logitech-as-an-ml-research-intern-to-work-on-computer-use-agents",
           title: 'Joined Logitech as an ML Research Intern to work on Computer Use Agents...',
           description: "",
-          section: "News",},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+          section: "News",},{id: "projects-document-retrieval",
+          title: 'Document Retrieval',
+          description: "Built an efficient IR system across 7 languages with computational limits",
           section: "Projects",handler: () => {
               window.location.href = "/projects/10_project/";
             },},{id: "projects-project-9",
