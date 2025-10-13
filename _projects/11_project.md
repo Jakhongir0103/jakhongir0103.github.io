@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Recommendation Systems
+title: Recommender Systems
 description: Compares collaborative filtering, matrix factorization, and neural networks
 img: assets/img/projects/dis2_mf_buomso.jpg
 importance: 10
