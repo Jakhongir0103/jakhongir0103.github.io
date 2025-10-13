@@ -1,80 +1,90 @@
 ---
 layout: page
-title: project 9
-description: another project with an image 🎉
-img: assets/img/6.jpg
-importance: 4
-category: fun
+title: Document Retrieval
+description: Built an efficient IR system across 7 languages with computational limits
+img: assets/img/projects/dis1_IR_pipeline.jpg
+importance: 8
+category: university
+report: https://github.com/Jakhongir0103/dis_projects/blob/main/pdfs/Project_1_Document_Retrieval.pdf
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+<!-- Project Links/Buttons -->
+<div class="links" style="margin-bottom: 2rem;">
+  {% if page.report %}
+    <a href="{{ page.report }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <i class="fas fa-file-pdf"></i> Technical Report
+    </a>
+  {% endif %}
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+When you need to search through 200,000+ documents across multiple languages-fast-the usual tricks might not work. Pre-trained language models deliver impressive results, but they're computationally expensive. Our task: build a multilingual information retrieval system that's both effective and resource-efficient.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+The setup was straightforward: retrieve the single most relevant document for each query from a corpus spanning 7 languages (Arabic, German, English, Spanish, French, Italian, and Korean). But here's the catch -- inference had to complete within 10 minutes, and we were limited to a Kaggle notebook's resources.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Our Approach
 
-{% raw %}
+We tested three categories of methods, ranging from classical to modern:
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+**TF-IDF**
 
-{% endraw %}
+We started with [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf), a semantic method that weighs terms by their frequency and uniqueness. The baseline scored 0.52 on our test metric (Recall@10), but we improved it by boosting high-IDF terms—since rare terms often indicate query-specific documents. Using a scalar multiplier on the top 2 IDF terms increased performance to **0.5871**, a 10% boost.
+
+**BM25: The Winner**
+
+[BM25](https://en.wikipedia.org/wiki/Okapi_BM25) refined the TF-IDF approach by accounting for document length and term saturation effects. It's a simple formula, but it works remarkably well:
+
+{% include figure.liquid path="assets/img/projects/dis1_IR_pipeline.jpg" title="IR System Pipeline" class="img-fluid rounded z-depth-1" %}
+
+The results were interesting: BM25 achieved **0.7714** on the dev set and **0.7562** on the final test submission. No complex models needed.
+
+**Text Embeddings**
+
+We tested multilingual-e5-small, a compact embedding model with under 250M parameters. We tried two chunking strategies (20-word and 200-word sequences) to handle the attention mechanism's length limitations. The results were disappointing: e5 with 200-word chunks scored only 0.5414, and shorter chunks performed even worse at 0.3028. Longer chunks provided better context but created language imbalances.
+
+**Reranking: The Diminishing Returns**
+
+We fine-tuned [DistilBERT](https://huggingface.co/distilbert/distilbert-base-uncased) as a reranker to refine retrieved results. Unfortunately, adding reranking degraded performance for most models—likely due to the small model size. It slightly helped text embedding methods but hurt the strong keyword-based methods. For our final submission, we stuck with pure BM25.
+
+## The Results
+
+Here's how everything stacked up:
+
+{% include figure.liquid path="assets/img/projects/dis1_rerankers_perf-size.png" title="Reranker Performance vs Model Size" class="img-fluid rounded z-depth-1" %}
+
+<table data-toggle="table" class="table table-bordered table-hover text-center align-middle">
+  <thead class="table-light">
+    <tr>
+      <th>Model</th>
+      <th>Recall@10</th>
+      <th>Recall@10 (lang. restricted)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TF-IDF (Baseline)</td>
+      <td>0.52</td>
+      <td>0.5628</td>
+    </tr>
+    <tr>
+      <td>TF-IDF (Boosted)</td>
+      <td>0.5871</td>
+      <td>0.6293</td>
+    </tr>
+    <tr>
+      <td>e5-sl200</td>
+      <td>0.5414</td>
+      <td>0.5442</td>
+    </tr>
+    <tr>
+      <td><strong>BM25</strong></td>
+      <td><strong>0.7714</strong></td>
+      <td><strong>0.7657</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+BM25 dominated across all 7 languages, with particularly strong performance in Spanish (0.91) and French (0.91). Even on less-resourced languages like Korean, it achieved 0.625.
+
+## Takeaways
+
+In constrained environments, classical information retrieval methods like BM25 outperform small embedding models because they're efficient, interpretable, and surprisingly effective at keyword matching. Text embeddings excel at semantic understanding, but they're overkill when you don't have the computational resources to properly leverage them.

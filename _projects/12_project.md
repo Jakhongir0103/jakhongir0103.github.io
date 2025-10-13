@@ -4,7 +4,9 @@ title: project 9
 description: another project with an image 🎉
 img: assets/img/6.jpg
 importance: 4
-category: fun
+category: university
+images:
+  slider: true
 ---
 
 Every project has a beautiful feature showcase page.
@@ -78,3 +80,45 @@ Here's the code for the last row of images above:
 ```
 
 {% endraw %}
+
+To present multiple images as a slider, you can use the following syntax. This creates 4 images which can be scroled with a slider
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_vanilla.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_heuristic.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_rnd.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_dyna.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+</swiper-container>
+<div class="caption">
+    Images with sliders.
+</div>
+
+
+Use HTML for tables:
+<table
+  data-toggle="table"
+  class="table table-bordered table-hover text-center align-middle"
+>
+  <thead class="table-light">
+    <tr>
+      <th>Model</th>
+      <th>Accuracy</th>
+      <th>Precision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>The Good</strong></td>
+      <td>86.78%</td>
+      <td>34.99%</td>
+    </tr>
+    <tr>
+      <td><strong>The Ugly</strong></td>
+      <td><strong>87.83%</strong></td>
+      <td><strong>36.91%</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="caption">
+    Best model performance on validation set. The best test submission was "The Ugly".
+</div>
