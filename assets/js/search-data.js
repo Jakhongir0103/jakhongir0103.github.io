@@ -92,9 +92,9 @@ ninja.data = [{
           description: "Built an efficient IR system across 7 languages with computational limits",
           section: "Projects",handler: () => {
               window.location.href = "/projects/10_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+            },},{id: "projects-recommendation-systems",
+          title: 'Recommendation Systems',
+          description: "Compares collaborative filtering, matrix factorization, and neural networks",
           section: "Projects",handler: () => {
               window.location.href = "/projects/11_project/";
             },},{id: "projects-project-9",
