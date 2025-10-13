@@ -5,5 +5,5 @@ description: 1st place -- a project based on LLMs and CV to analyze satellite im
 img: assets/img/projects/hack_axa_thumbnail.jpg
 importance: 1
 redirect: https://github.com/Jakhongir0103/vlms-for-satellite-hack
-category: fun
+category: miscellaneous
 ---
