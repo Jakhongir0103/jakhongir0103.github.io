@@ -1,124 +1,98 @@
 ---
 layout: page
-title: project 9
-description: another project with an image 🎉
-img: assets/img/6.jpg
-importance: 4
+title: Recommendation Systems
+description: Compares collaborative filtering, matrix factorization, and neural networks
+img: assets/img/projects/dis2_mf_buomso.jpg
+importance: 10
 category: university
-images:
-  slider: true
+report: https://github.com/Jakhongir0103/dis_projects/blob/main/pdfs/Project_2_Recommender_Systems.pdf
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+<!-- Project Links/Buttons -->
+<div class="links" style="margin-bottom: 2rem;">
+  {% if page.report %}
+    <a href="{{ page.report }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <i class="fas fa-file-pdf"></i> Technical Report
+    </a>
+  {% endif %}
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+With millions of books available online, effective recommendation systems are crucial for helping users discover titles they'll love. In this project, we implemented and compared 4 different approaches to predicting user book ratings, pitting traditional machine learning against modern deep learning methods.
+
+## Methods: 4 Approaches to Recommendations
+
+**Collaborative Filtering** is the classic approach that recommends items based on similar users' preferences. We tested both user-based filtering (finding similar users) and item-based filtering (finding similar books), combining the two for better performance. The main limitation? It struggles when users or items lack similar peers.
+
+**Matrix Factorization with ALS** decomposes the user-book rating matrix into latent factors representing hidden patterns. Unlike collaborative filtering, this method excels at capturing the underlying structure in sparse data. We used Alternating Least Squares (ALS) to optimize the factorization, tuning the latent factor dimension to k=256.
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/dis2_mf_buomso.jpg" title="Matrix factorization decomposition of the rating matrix" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Matrix factorization decomposition of the rating matrix.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+**Joint-Embeddings** Neural Network adds non-linearity to matrix factorization by training embeddings through a multi-layer perceptron. This approach learns user and item representations jointly, potentially capturing more complex relationships than linear methods.
 
-{% raw %}
-
-```html
 <div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/dis2_mf_nn_arch.jpg" title="Joint-embeddings neural network architecture" class="img-fluid rounded z-depth-1" %}
+    </div>
 </div>
-```
-
-{% endraw %}
-
-To present multiple images as a slider, you can use the following syntax. This creates 4 images which can be scroled with a slider
-<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_vanilla.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_heuristic.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_rnd.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_dyna.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
-</swiper-container>
 <div class="caption">
-    Images with sliders.
+    Joint-embeddings neural network architecture.
 </div>
 
+**SLIM (Sparse Linear Methods)** combines the speed of collaborative filtering with matrix factorization's effectiveness by learning a sparse aggregation matrix. Its key strength is computational efficiency—we trained it in under 4 minutes using parallel processing.
 
-Use HTML for tables:
+## Results: Matrix Factorization Dominates
+
+Here's where things get interesting. Our test set results tell a clear story:
+
 <table
-  data-toggle="table"
-  class="table table-bordered table-hover text-center align-middle"
+data-toggle="table"
+class="table table-bordered table-hover text-center align-middle"
 >
   <thead class="table-light">
     <tr>
-      <th>Model</th>
-      <th>Accuracy</th>
-      <th>Precision</th>
+      <th>Method</th>
+      <th>RMSE</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>The Good</strong></td>
-      <td>86.78%</td>
-      <td>34.99%</td>
+      <td><strong>Matrix Factorization (ALS)</strong></td>
+      <td><strong>0.812</strong></td>
     </tr>
     <tr>
-      <td><strong>The Ugly</strong></td>
-      <td><strong>87.83%</strong></td>
-      <td><strong>36.91%</strong></td>
+      <td>Collaborative Filtering (Aggregated)</td>
+      <td>0.889</td>
+    </tr>
+    <tr>
+      <td>SLIM (Aggregated)</td>
+      <td>1.467</td>
+    </tr>
+    <tr>
+      <td>Joint-Embeddings Neural Network</td>
+      <td>1.453</td>
     </tr>
   </tbody>
 </table>
 
-<div class="caption">
-    Best model performance on validation set. The best test submission was "The Ugly".
-</div>
+**Matrix Factorization (ALS) achieved the best performance with an RMSE of 0.812**, significantly outperforming the other methods. Collaborative filtering came second at 0.889, while SLIM and the neural network lagged at 1.467 and 1.453 respectively.
+
+The superiority of matrix factorization makes sense—ALS directly optimizes for RMSE, matching our evaluation metric perfectly. However, the neural network's dramatic performance drop from development set (0.843) to test set (1.453) was surprising and suggests potential overfitting issues worth investigating.
+
+Collaborative filtering's weaker performance highlights its core limitation: it can only leverage rating patterns, missing richer contextual information. Interestingly, cosine similarity outperformed Pearson correlation, and aggregating both user-based and item-based predictions improved results consistently.
+
+## Why This Matters
+
+Our findings confirm what the Netflix Prize demonstrated years ago: **latent factor models beat neighborhood-based approaches** for recommendation tasks. Matrix factorization's efficiency and accuracy make it the practical choice for production systems.
+
+However, the study reveals room for improvement. The dataset contained only user-book rating pairs with no additional context. Enriching this with metadata like author, genre, or publication year could unlock more sophisticated patterns and help hybrid approaches shine.
+
+## Takeaway
+
+**Matrix factorization**, a relatively straightforward method, outperformed more sophisticated neural network approaches -- a useful reminder that the best model isn't always the most elaborate one.

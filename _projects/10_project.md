@@ -49,9 +49,19 @@ We fine-tuned [DistilBERT](https://huggingface.co/distilbert/distilbert-base-unc
 
 Here's how everything stacked up:
 
-{% include figure.liquid path="assets/img/projects/dis1_rerankers_perf-size.png" title="Reranker Performance vs Model Size" class="img-fluid rounded z-depth-1" %}
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/dis1_rerankers_perf-size.png" title="Reranker Performance vs Model Size" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Reranker Performance vs Model Size.
+</div>
 
-<table data-toggle="table" class="table table-bordered table-hover text-center align-middle">
+<table
+data-toggle="table"
+class="table table-bordered table-hover text-center align-middle"
+>
   <thead class="table-light">
     <tr>
       <th>Model</th>
