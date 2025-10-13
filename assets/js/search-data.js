@@ -97,11 +97,16 @@ ninja.data = [{
           description: "Compares collaborative filtering, matrix factorization, and neural networks",
           section: "Projects",handler: () => {
               window.location.href = "/projects/11_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+            },},{id: "projects-satellite-imagery",
+          title: 'Satellite Imagery',
+          description: "1st place -- a project based on LLMs and CV to analyze satellite imagery -- Lauzhack 2024, AXA challenge",
           section: "Projects",handler: () => {
               window.location.href = "/projects/12_project/";
+            },},{id: "projects-llm-training",
+          title: 'LLM training',
+          description: "2nd place –- LLM training &amp; architecture hackathon",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/13_project/";
             },},{id: "projects-galactita",
           title: 'GalactiTA',
           description: "1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tuning on scientific datasets.",
