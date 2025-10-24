@@ -3,7 +3,7 @@ layout: page
 title: Visual Reasoning
 description: Explored GRPO to enhance visual question answering in vision-language models
 img: assets/img/projects/vi_grounding_overview.jpeg
-importance: 3
+importance: 1
 category: university
 report: https://github.com/Jakhongir0103/VLM-R1/blob/main/pdf/Visual_Intelligence_Tech_Report.pdf
 code: https://github.com/Jakhongir0103/VLM-R1

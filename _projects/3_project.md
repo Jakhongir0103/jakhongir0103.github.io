@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Multimodal Reasoning
+title: Mixed-modal Reasoning
 description: Trained 3 paradigms of visual reasoning using GRPO
 img: assets/img/projects/syrielle_diagram.jpeg
 importance: 1
