@@ -6,7 +6,7 @@ img: assets/img/projects/syrielle_diagram.jpeg
 importance: 1
 category: research
 report: https://github.com/Jakhongir0103/multimodal_cot/blob/main/pdf/technical_report.pdf
-code: https://github.com/Jakhongir0103/multimodal_cot
+github: https://github.com/Jakhongir0103/multimodal_cot
 ---
 
 <!-- Project Links/Buttons -->
@@ -16,9 +16,9 @@ code: https://github.com/Jakhongir0103/multimodal_cot
       <i class="fas fa-file-pdf"></i> Technical Report
     </a>
   {% endif %}
-  {% if page.code %}
-    <a href="{{ page.code }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fab fa-github"></i> Code
+  {% if page.github %}
+    <a href="{{ page.github }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <i class="fa-brands fa-github gh-icon"></i> Code
     </a>
   {% endif %}
 </div>

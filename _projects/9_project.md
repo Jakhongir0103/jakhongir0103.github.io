@@ -5,7 +5,7 @@ description: Using machine learning on behavioral risk factor data to predict he
 img: assets/img/projects/ml1_thumbnail.png
 importance: 7
 category: university
-code: https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction
+github: https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction
 report: https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction/blob/main/pdfs/project1_report.pdf
 ---
 
@@ -16,8 +16,8 @@ report: https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction/blob
       <i class="fas fa-file-pdf"></i> Technical Report
     </a>
   {% endif %}
-  {% if page.code %}
-    <a href="{{ page.code }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  {% if page.github %}
+    <a href="{{ page.github }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
       <i class="fab fa-github"></i> Code
     </a>
   {% endif %}

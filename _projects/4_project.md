@@ -1,17 +1,17 @@
 ---
 layout: page
 title: Multi-turn RL
-description: Extended the VeRL framework to support for training multimodal models with multi-turn reinforcement learning with external tools using images as both inputs and outputs.
+description: Extended the VeRL framework to support training multimodal models with multi-turn reinforcement learning with external tools.
 img: assets/img/projects/verl_thumbnal.png
 importance: 2
 category: research
-code: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
+github: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
 ---
 
 <!-- Project Links/Buttons -->
 <div class="links" style="margin-bottom: 2rem;">
-  {% if page.code %}
-    <a href="{{ page.code }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  {% if page.github %}
+    <a href="{{ page.github }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
       <i class="fab fa-github"></i> Code
     </a>
   {% endif %}
