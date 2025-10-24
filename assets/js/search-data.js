@@ -124,7 +124,7 @@ ninja.data = [{
               window.location.href = "/projects/3_project/";
             },},{id: "projects-multi-turn-rl",
           title: 'Multi-turn RL',
-          description: "Extended the VeRL framework to support for training multimodal models with multi-turn reinforcement learning with external tools using images as both inputs and outputs.",
+          description: "Extended the VeRL framework to support training multimodal models with multi-turn reinforcement learning with external tools.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-visual-reasoning",
