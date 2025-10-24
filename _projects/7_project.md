@@ -2,7 +2,7 @@
 layout: page
 title: Segmentation and Classification
 description: Using classic computer vision techniques to segment and extract, and deep learning for the classification
-img: assets/img/projects/coin_thumbnail.png
+img: assets/img/projects/coin_neutral_segmentation.png
 importance: 6
 category: university
 images:

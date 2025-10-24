@@ -28,6 +28,20 @@
               {% endif %}
             </div>
           {% endif %}
+          {% if project.report %}
+            <div class="report-icon">
+              <div class="icon" data-toggle="tooltip" title="Technical Report">
+                <a href="{{ project.report }}"><i class="fas fa-file-pdf"></i></a>
+              </div>
+            </div>
+          {% endif %}
+          {% if project.checkpoints %}
+            <div class="checkpoints-icon">
+              <div class="icon" data-toggle="tooltip" title="Checkpoints">
+                <a href="{{ project.checkpoints }}"><i class="fas fa-cube"></i></a>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
