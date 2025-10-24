@@ -99,12 +99,12 @@ ninja.data = [{
               window.location.href = "/projects/11_project/";
             },},{id: "projects-satellite-imagery",
           title: 'Satellite Imagery',
-          description: "1st place -- a project based on LLMs and CV to analyze satellite imagery -- Lauzhack 2024, AXA challenge",
+          description: "🥇1st Place🥇 － Hackathon on analyzing satellite imagery based on LLMs and CV (Lauzhack 2024, AXA challenge)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/12_project/";
             },},{id: "projects-llm-training",
           title: 'LLM training',
-          description: "2nd place –- LLM training &amp; architecture hackathon",
+          description: "🥈2nd Place🥈 － Hackathon on LLM training &amp; architecture",
           section: "Projects",handler: () => {
               window.location.href = "/projects/13_project/";
             },},{id: "projects-galactita",
@@ -117,8 +117,8 @@ ninja.data = [{
           description: "Analysis of Tech channels on YouTube using the videos published between May 2005 and October 2019",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-multimodal-reasoning",
-          title: 'Multimodal Reasoning',
+            },},{id: "projects-mixed-modal-reasoning",
+          title: 'Mixed-modal Reasoning',
           description: "Trained 3 paradigms of visual reasoning using GRPO",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
