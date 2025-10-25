@@ -72,7 +72,7 @@ We also implemented Dyna-Q$^{[2]}$, which combines model-free and model-based le
 
 We report the episode duration over training for each method below. Lower value means the model has learned to finish the task faster.
 
-<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true" style="max-width: 80%; margin: 0 auto;">
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_vanilla.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_heuristic.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_episode_rnd.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
@@ -87,7 +87,7 @@ We report the episode duration over training for each method below. Lower value 
 
 One fascinating insight comes from visualizing where each algorithm accumulates rewards in the state space. For each of the 4 methods, we report the sum of reward per position and velocity. Position=0.5 is the final state.
 
-<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true" style="max-width: 60%; margin: 0 auto;">
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.2-reward distribution.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.3-reward distribution.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_3.4-reward distribution.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
@@ -110,7 +110,7 @@ One fascinating insight comes from visualizing where each algorithm accumulates 
 
 Below is how the model learns to achieve the task during traning at the episodes 99, 499, and 2998:
 
-<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true" style="max-width: 60%; margin: 0 auto;">
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_dyna_demo_1.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_dyna_demo_1.png" class="img-fluid rounded z-depth-2" %}</swiper-slide>
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/mountain_car_dyna_demo_1.png" class="img-fluid rounded z-depth-3" %}</swiper-slide>

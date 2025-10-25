@@ -73,7 +73,7 @@ The final model evaluation on held-out test data revealed strong classification 
 
 Here are some prediction examples of the final model:
 
-<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true" style="max-width: 60%; margin: 0 auto;">
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/coin_prediction_example_1.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/coin_prediction_example_2.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
 </swiper-container>
