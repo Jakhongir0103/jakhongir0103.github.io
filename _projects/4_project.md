@@ -19,36 +19,32 @@ github: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
   {% endif %}
 </div>
 
-Reinforcement learning has revolutionized language model training, but what happens when models need to both see and manipulate images? This project extends the [VeRL](https://github.com/volcengine/verl) framework for training vision-language models using reinforcement learning with external tools, where images serve as both inputs and outputs throughout the learning process.
-
 ## Technical Approach
 
-Our work extends the VeRL reinforcement learning framework to support multimodal training. The key contribution is extending the agent-based multi-turn RL training to use tools with images as both input and output.
+Our work extends the VeRL framework—which was originally designed for text-based environments—to handle image-based interactions. The key contribution is adding support for multi-turn RL training where images are both inputs and outputs, and where the model can invoke external tools to manipulate them.
 
 ### Core Contributions
 
-**Multimodal Data Pipeline**: We redesigned the agent loop to handle images at every stage—from initial policy rollouts through reward computation. This required careful coordination between the text processing components and new image handling mechanisms.
+**1. Multimodal Environment Support**  
+We redesigned the VeRL environment loop to handle image tensors throughout all stages of interaction—policy rollout, tool execution, and reward computation. This required extending the observation and action spaces and integrating image processing into the agent-environment interface.
 
-**Flexible Processing Architecture**: The system now supports both text-only and multimodal models through a unified interface that automatically adapts to the model's capabilities. This means researchers can train either type of model without changing their training code.
+**2. Unified Architecture for Vision and Text Models**  
+The extended system now supports both text-only and vision-language models via a unified interface. This allows researchers to seamlessly train multimodal agents without modifying core framework components.
 
-**Tool Integration Framework**: We developed a library of image manipulation tools that models can learn to use, such as:
-- Rotation and flipping operations
-- Cropping and bounding box drawing
-- Line drawing and spatial transformations
+**3. External Tool Library for Image Manipulation**  
+We implemented a set of image manipulation tools that the model can learn to use autonomously during training, including:
+- Rotation (clockwise/counterclockwise)
+- Cropping and zooming
+- Flipping and simple geometric transformations  
 
-## Experiment: Learning to Estimate Rotation
+These tools allow the model to transform images before reasoning, enabling it to handle visual distortions and small details more effectively.
 
-To validate the framework, we trained [Qwen2.5-VL-3B](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) on a rotation estimation task. The model receives randomly rotated images and must predict the rotation angle through interactive use of a rotation tool. This multi-turn interaction allows the model to refine its predictions iteratively.
+## Experiment: Learning to Handle Rotated Text
 
-Data samples of randomly rotated text in an image:
+To validate the framework, we trained [Qwen2.5-VL-3B](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) on a **rotation correction task**.  
+The model was asked to read text from images that were synthetically rotated by random angles between 0° and 360°. When the rotation exceeded roughly **120°–240°**, the baseline model failed to correctly recognize the text—highlighting its inability to handle geometric transformations directly.
 
-<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_1.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_2.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
-  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_3.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
-</swiper-container>
-
-We found that the model was not capable of reading the text, when the angle of rotation is between 120°-240° as shown in the below image:
+To address this, we trained the model in a **multi-turn RL setup**, where it could first invoke a *Rotation* tool to reorient the image before attempting to read the text. This setup explicitly encouraged the model to learn that **rotating the image back to 0°** improves its performance on downstream text recognition.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
@@ -56,10 +52,23 @@ We found that the model was not capable of reading the text, when the angle of r
     </div>
 </div>
 <div class="caption">
-    The accuracy of predicting the rotated text in the image across the angles between 0° and 360°.
+    Text prediction accuracy across rotation angles between 0° and 360°. The model struggles significantly between 120°–240°.
 </div>
 
-Next, we train the model with *Rotation* tool in multi-turn manner to rotate the image back to 0° before making the prediction.
+Below are some data samples of randomly rotated texts in an image:
+
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true" style="max-width: 60%; margin: 0 auto;">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_1.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_2.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_3.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_4.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_5.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_6.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_7.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_8.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_9.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_10.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+</swiper-container>
 
 #### Reward Shaping Effects
 
@@ -88,7 +97,7 @@ Below is predicted angle during training for different settings of rewards and t
     Predicted angle during training for different settings of rewards and the batch size.
 </div>
 
-#### Key Findings
+#### Results and Findings
 
 The experiments revealed interesting trade-offs between prediction accuracy and interaction efficiency in the conversation:
 
@@ -104,10 +113,12 @@ The experiments revealed interesting trade-offs between prediction accuracy and 
     Number of turns (left) and the Reward (right) during training for different settings of rewards and the batch size.
 </div>
 
-**Strict Rewards (0-45°)**: The model learned to predict angles uniformly across the full range, demonstrating good coverage. However, it developed a tendency to use the tool multiple times per query, suggesting inefficient interaction patterns.
+- The baseline model failed to interpret rotated text for large angles (120°–240°).  
+- After RL training with the rotation tool, the model learned to rotate the image back to the correct orientation before predicting, leading to noticeable performance improvement.  
+- The average reward increased by approximately 20% during training, showing learning progress.  
+- Different reward designs led to distinct behaviors:
+  - *Broad tolerance* caused the model to exploit reward averaging (“reward hacking”) by predicting mean angles.
+  - *Strict tolerance* encouraged accurate correction but increased tool usage.
+- *Large batch + strict reward* achieved the best balance between accuracy and efficiency.
 
-**Small Batch Training**: With smaller batches, the model learned highly efficient behavior—using the tool exactly once per query (number of turns = 4). But this came at a cost: it converged to always predicting the average angle (~0°), essentially learning a safe but uninformative strategy.
-
-**Large Batch + Strict Rewards**: This configuration achieved a balanced outcome, maintaining reasonable angle diversity while keeping tool usage relatively efficient.
-
-These results highlight a fundamental tension in multimodal RL: reward design and training dynamics jointly determine what behaviors emerge. The framework successfully enables tool learning, but achieving desired behavior requires careful tuning of both the reward function and hyperparameters.
+These results demonstrate that the extended framework successfully enables multi-turn image manipulation learning, and that reward design plays a crucial role in shaping the model’s reasoning and tool-use strategies.
