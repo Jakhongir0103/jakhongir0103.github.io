@@ -4,6 +4,8 @@ title: Multi-turn RL
 description: Extended the VeRL framework to support training multimodal models with multi-turn reinforcement learning with external tools.
 img: assets/img/projects/verl_thumbnal.png
 importance: 2
+images:
+  slider: true
 category: research
 github: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
 ---
@@ -21,7 +23,7 @@ Reinforcement learning has revolutionized language model training, but what happ
 
 ## Technical Approach
 
-Our work extends the VeRL reinforcement learning framework to support multimodal training. The key innovation is creating a unified pipeline where visual data flows seamlessly alongside text throughout the entire RL loop.
+Our work extends the VeRL reinforcement learning framework to support multimodal training. The key contribution is extending the agent-based multi-turn RL training to use tools with images as both input and output.
 
 ### Core Contributions
 
@@ -29,16 +31,35 @@ Our work extends the VeRL reinforcement learning framework to support multimodal
 
 **Flexible Processing Architecture**: The system now supports both text-only and multimodal models through a unified interface that automatically adapts to the model's capabilities. This means researchers can train either type of model without changing their training code.
 
-**Tool Integration Framework**: We developed a comprehensive library of image manipulation tools that models can learn to use, such as:
+**Tool Integration Framework**: We developed a library of image manipulation tools that models can learn to use, such as:
 - Rotation and flipping operations
 - Cropping and bounding box drawing
 - Line drawing and spatial transformations
 
-The framework is designed for extensibility—adding new tools requires only implementing the tool logic and defining its interface, making it easy to explore different multimodal tasks.
-
 ## Experiment: Learning to Estimate Rotation
 
 To validate the framework, we trained [Qwen2.5-VL-3B](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) on a rotation estimation task. The model receives randomly rotated images and must predict the rotation angle through interactive use of a rotation tool. This multi-turn interaction allows the model to refine its predictions iteratively.
+
+Data samples of randomly rotated text in an image:
+
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_1.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_2.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/verl_example_3.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+</swiper-container>
+
+We found that the model was not capable of reading the text, when the angle of rotation is between 120°-240° as shown in the below image:
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/verl_rotation.png" title="Text prediction accuracy" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    The accuracy of predicting the rotated text in the image across the angles between 0° and 360°.
+</div>
+
+Next, we train the model with *Rotation* tool in multi-turn manner to rotate the image back to 0° before making the prediction.
 
 #### Reward Shaping Effects
 
@@ -56,6 +77,8 @@ $$
 r(\theta) = \begin{cases} 1 - \frac{|\theta_{pred} - \theta_{true}|}{45°} & \text{if } |\theta_{pred} - \theta_{true}| \leq 45° \\ 0 & \text{otherwise} \end{cases}
 $$
 
+Below is predicted angle during training for different settings of rewards and the batch size. We can see that when trained with *Broad Tolerance* reward, the model learns the average angle in the dataset, leading to *reward hacking*.
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/projects/verl_angle.png" title="Angle predictions" class="img-fluid rounded z-depth-1" %}
@@ -67,7 +90,7 @@ $$
 
 #### Key Findings
 
-The experiments revealed interesting trade-offs between prediction accuracy and interaction efficiency:
+The experiments revealed interesting trade-offs between prediction accuracy and interaction efficiency in the conversation:
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -83,7 +106,7 @@ The experiments revealed interesting trade-offs between prediction accuracy and 
 
 **Strict Rewards (0-45°)**: The model learned to predict angles uniformly across the full range, demonstrating good coverage. However, it developed a tendency to use the tool multiple times per query, suggesting inefficient interaction patterns.
 
-**Small Batch Training**: With smaller batches, the model learned highly efficient behavior—using the tool exactly once per query. But this came at a cost: it converged to always predicting the average angle (~90°), essentially learning a safe but uninformative strategy.
+**Small Batch Training**: With smaller batches, the model learned highly efficient behavior—using the tool exactly once per query (number of turns = 4). But this came at a cost: it converged to always predicting the average angle (~0°), essentially learning a safe but uninformative strategy.
 
 **Large Batch + Strict Rewards**: This configuration achieved a balanced outcome, maintaining reasonable angle diversity while keeping tool usage relatively efficient.
 
