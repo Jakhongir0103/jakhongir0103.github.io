@@ -70,9 +70,9 @@ This paradigm used a two-stage pipeline with [Qwen2.5-VL-7B](https://huggingface
 
 **Images Hurt Performance**
 
-Generating images during reasoning consistently degraded performance across both paradigms that produced visual outputs:
+Generating images during reasoning consistently degraded performance across both paradigms that produced visual outputs.
 
-1. *Multimodal-to-Multimodal*: Textual-only reasoning achieved a higher perofrmance over multimodal reasoning on PuzzleVQA, with the gap consistent across both in-domain and out-of-domain puzzles.
+*Multimodal-to-Multimodal*: Textual-only reasoning achieved a higher perofrmance over multimodal reasoning on PuzzleVQA, with the gap consistent across both in-domain and out-of-domain puzzles.
 
 <table
   data-toggle="table"
@@ -106,12 +106,12 @@ Generating images during reasoning consistently degraded performance across both
 </div>
 
 Below are examples of consistent and inconsistent interleaved image generations:
-<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true" style="max-width: 80%; margin: 0 auto;">
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/syrielle_t2m_example1.jpeg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/projects/syrielle_t2m_example2.jpeg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
 </swiper-container>
 
-2. *Text-to-Multimodal*: The best textual approach reached 0.450 Pass@1 on ReSQ, while the best multimodal variant achieved only 0.411. Even the DALL-E 3 + GPT-4o baseline showed textual reasoning (0.761) outperforming multimodal reasoning (0.695).
+*Text-to-Multimodal*: The best textual approach reached 0.450 Pass@1 on ReSQ, while the best multimodal variant achieved only 0.411. Even the DALL-E 3 + GPT-4o baseline showed textual reasoning (0.761) outperforming multimodal reasoning (0.695).
 
 Including image-based rewards during GRPO training further degraded performance, suggesting the optimization struggled to effectively leverage visual information.
 
