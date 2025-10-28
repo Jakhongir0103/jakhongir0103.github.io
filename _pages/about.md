@@ -30,7 +30,7 @@ I research large language and vision models as an MSc student at [EPFL](https://
 #### Research Interests
 I research building inclusive, multimodal reasoning AI systems that work for everyone. Below are some areas I've been working on:
 
-- **Inclusivity in NLP:** I want to bridge the gaps in multilingual NLP & ensure AI benefits linguistically diverse and underrepresented communities
+- **Multilingual NLP:** I want to bridge the gaps in multilingual NLP & ensure AI benefits linguistically diverse and underrepresented communities
   - [ConLID](https://arxiv.org/abs/2506.15304): Contrastive language identification for low-resource languages
   - [Apertus](https://arxiv.org/abs/2509.14233): The first large-scale language model developed in Switzerland
   <!-- - COLM workshop (annotations, models) -->
