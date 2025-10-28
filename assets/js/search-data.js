@@ -25,10 +25,10 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "",
+          description: "My curriculum vitae",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/assets/pdf/cv.pdf";
+            window.location.href = "/_pages/cv/";
           },
         },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
         
