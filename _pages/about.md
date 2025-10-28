@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.epfl.ch/en/'>EPFL</a>
+subtitle: <a href='https://www.epfl.ch/en/'>EPFL</a> | <a href='https://www.logitech.com/'>Logitech</a>
 
 profile:
   align: right
