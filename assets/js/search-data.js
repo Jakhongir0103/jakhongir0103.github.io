@@ -28,7 +28,7 @@ ninja.data = [{
           description: "My curriculum vitae",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/_pages/cv/";
+            window.location.href = "/cv/";
           },
         },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
         
