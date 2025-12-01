@@ -43,4 +43,4 @@ I research building inclusive, multimodal reasoning AI systems that work for eve
 - **Efficient Reasoning:** As we scale to multimodal scenarios, we need computationally efficient reasoning to make deployment practical
   - Investigating the "overthinking" phenomenon in LLMs (ongoing)
 
-*Starting from Fall 2026, I am seeking a PhD position; a brief overview of my proposed work is available in [this video](https://www.youtube.com/watch?v=N3FXViQ1W14).*
+*Starting from Fall 2026, I am seeking a PhD position; a brief overview of my proposed work is available in this [research proposal](https://www.youtube.com/watch?v=N3FXViQ1W14) video.*
