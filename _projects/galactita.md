@@ -9,15 +9,6 @@ date: 2023-08-01
 report: https://github.com/Jakhongir0103/sft-dpo-rag-training/blob/main/pdfs/report.pdf
 ---
 
-<!-- Project Links/Buttons -->
-<div class="links" style="margin-bottom: 2rem;">
-  {% if page.report %}
-    <a href="{{ page.report }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fas fa-file-pdf"></i> Technical Report
-    </a>
-  {% endif %}
-</div>
-
 Large Language Models have transformed education, but they often struggle with technical domains and complex reasoning. This project addresses a key question: **How can we adapt pre-trained LLMs for scientific multiple-choice question answering?** 
 
 We developed **GalactiTA**, a digital teaching assistant specifically designed for STEM subjects. Starting with the Galactica-1.3B model, we applied a three-stage training pipeline: Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO$^{[1]}$), and Retrieval-Augmented Generation (RAG$^{[2]}$) tuning. The final model achieved an **11.52% improvement** over the baseline on EPFL course questions, demonstrating that smaller, specialized models can effectively support students and teaching assistants with domain-specific queries.

@@ -5,9 +5,22 @@ description: another project with an image 🎉
 img: assets/img/6.jpg
 importance: 4
 category: category
-date: 2024-01-15
+date: 2024-01-01
 images:
   slider: true
+
+# Project header links (optional)
+# These links are automatically rendered at the top of the project page
+# Remove any links you don't need
+report: https://example.com/report.pdf
+github: https://github.com/user/repo
+checkpoints: https://huggingface.co/path/to/checkpoints
+arxiv: https://arxiv.org/abs/1234.56789
+demo: https://example.com/demo
+dataset: https://huggingface.co/datasets/path/to/dataset
+
+# Display settings (optional)
+# redirect: https://example.com (if project is external, visit this link instead)
 ---
 
 Every project has a beautiful feature showcase page.

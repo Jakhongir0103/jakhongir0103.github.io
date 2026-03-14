@@ -6,5 +6,5 @@ img: assets/img/projects/ada_thumbnail.png
 importance: 3
 redirect: https://jakhongir0103.github.io/datastory/
 category: university
-date: 2023-01
+date: 2023-05-01
 ---

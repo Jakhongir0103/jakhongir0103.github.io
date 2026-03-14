@@ -5,30 +5,11 @@ description: Explored GRPO to enhance visual question answering in vision-langua
 img: assets/img/projects/vi_grounding_overview.jpeg
 importance: 1
 category: university
-date: 2023-01
+date: 2023-11-01
 report: https://github.com/Jakhongir0103/VLM-R1/blob/main/pdf/Visual_Intelligence_Tech_Report.pdf
 github: https://github.com/Jakhongir0103/VLM-R1
 checkpoints: https://huggingface.co/collections/Jakh0103/visual-intelligence-68398719ee0d35e8b553b5c9
 ---
-
-<!-- Project Links/Buttons -->
-<div class="links" style="margin-bottom: 2rem;">
-  {% if page.report %}
-    <a href="{{ page.report }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fas fa-file-pdf"></i> Technical Report
-    </a>
-  {% endif %}
-  {% if page.github %}
-    <a href="{{ page.github }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fab fa-github"></i> Code
-    </a>
-  {% endif %}
-  {% if page.checkpoints %}
-    <a href="{{ page.checkpoints }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fas fa-cube"></i> Checkpoints
-    </a>
-  {% endif %}
-</div>
 
 We investigate how Group Relative Policy Optimization (GRPO), a reinforcement learning technique, can enhance visual reasoning capabilities in vision-language models (VLMs). Our study examines five key dimensions: the alignment between reasoning chains and final answers, grounding reasoning with bounding boxes, generalization from synthetic to real-world data, bias mitigation, and prompt-based reasoning induction. Our findings show that GRPO improves performance and generalization on out-of-domain datasets when structured rewards are used, but reasoning alignment remains imperfect and prompt tuning proves challenging. These results highlight both the potential and current limitations of reinforcement learning for advancing visual reasoning in VLMs.
 

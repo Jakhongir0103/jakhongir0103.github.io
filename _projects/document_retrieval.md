@@ -9,15 +9,6 @@ date: 2022-02-01
 report: https://github.com/Jakhongir0103/dis_projects/blob/main/pdfs/Project_1_Document_Retrieval.pdf
 ---
 
-<!-- Project Links/Buttons -->
-<div class="links" style="margin-bottom: 2rem;">
-  {% if page.report %}
-    <a href="{{ page.report }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fas fa-file-pdf"></i> Technical Report
-    </a>
-  {% endif %}
-</div>
-
 When you need to search through 200,000+ documents across multiple languages-fast-the usual tricks might not work. Pre-trained language models deliver impressive results, but they're computationally expensive. Our task: build a multilingual information retrieval system that's both effective and resource-efficient.
 
 The setup was straightforward: retrieve the single most relevant document for each query from a corpus spanning 7 languages (Arabic, German, English, Spanish, French, Italian, and Korean). But here's the catch -- inference had to complete within 10 minutes, and we were limited to a Kaggle notebook's resources.

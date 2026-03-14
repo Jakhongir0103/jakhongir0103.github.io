@@ -11,15 +11,6 @@ date: 2024-06-01
 github: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
 ---
 
-<!-- Project Links/Buttons -->
-<div class="links" style="margin-bottom: 2rem;">
-  {% if page.github %}
-    <a href="{{ page.github }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fab fa-github"></i> Code
-    </a>
-  {% endif %}
-</div>
-
 ## Technical Approach
 
 Our work extends the VeRL framework—which was originally designed for text-based environments—to handle image-based interactions. The key contribution is adding support for multi-turn RL training where images are both inputs and outputs, and where the model can invoke external tools to manipulate them.

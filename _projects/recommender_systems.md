@@ -9,15 +9,6 @@ date: 2021-11-01
 report: https://github.com/Jakhongir0103/dis_projects/blob/main/pdfs/Project_2_Recommender_Systems.pdf
 ---
 
-<!-- Project Links/Buttons -->
-<div class="links" style="margin-bottom: 2rem;">
-  {% if page.report %}
-    <a href="{{ page.report }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fas fa-file-pdf"></i> Technical Report
-    </a>
-  {% endif %}
-</div>
-
 With millions of books available online, effective recommendation systems are crucial for helping users discover titles they'll love. In this project, we implemented and compared 4 different approaches to predicting user book ratings, pitting traditional machine learning against modern deep learning methods.
 
 ## Methods: 4 Approaches to Recommendations

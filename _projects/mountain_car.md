@@ -12,20 +12,6 @@ report: https://github.com/Jakhongir0103/mountain-car-reinforcement-learning/blo
 github: https://github.com/Jakhongir0103/mountain-car-reinforcement-learning
 ---
 
-<!-- Project Links/Buttons -->
-<div class="links" style="margin-bottom: 2rem;">
-  {% if page.report %}
-    <a href="{{ page.report }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fas fa-file-pdf"></i> Technical Report
-    </a>
-  {% endif %}
-  {% if page.github %}
-    <a href="{{ page.github }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fab fa-github"></i> Code
-    </a>
-  {% endif %}
-</div>
-
 The [Mountain Car](https://gymnasium.farama.org/environments/classic_control/mountain_car/) environment presents a classic reinforcement learning challenge where an agent must learn to drive a car up a steep hill by building momentum through strategic back-and-forth movements. The sparse reward structure (only -1 per timestep with no intermediate feedback) makes this seemingly simple task surprisingly difficult for standard RL algorithms. We explored both model-free (DQN with auxiliary rewards) and model-based (Dyna-Q) approaches to overcome this challenge.
 
 <div class="row justify-content-center">

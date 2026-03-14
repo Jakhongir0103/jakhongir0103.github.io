@@ -10,20 +10,6 @@ github: https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction
 report: https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction/blob/main/pdfs/project1_report.pdf
 ---
 
-<!-- Project Links/Buttons -->
-<div class="links" style="margin-bottom: 2rem;">
-  {% if page.report %}
-    <a href="{{ page.report }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fas fa-file-pdf"></i> Technical Report
-    </a>
-  {% endif %}
-  {% if page.github %}
-    <a href="{{ page.github }}" class="btn btn-primary btn-sm" role="button" target="_blank" style="background-color: white !important; border: 1px solid black !important; color: black !important; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <i class="fab fa-github"></i> Code
-    </a>
-  {% endif %}
-</div>
-
 *Cardiovascular diseases (CVD)* are among the leading causes of death worldwide. In this project, we developed machine learning models to help with early detection of CVDs using data from the Behavioral Risk Factor Surveillance System (BRFSS), a large-scale survey of U.S. residents' health behaviors and risk factors.
 
 > *All models were implemented from scratch using Python native libraries - no machine learning frameworks like scikit-learn or PyTorch were used.*
