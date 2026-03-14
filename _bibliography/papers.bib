@@ -150,31 +150,6 @@
 %
 % ============================================================================
 
-@inproceedings{foroutan2025conlidsupervisedcontrastivelearning,
-  title={ConLID: Supervised Contrastive Learning for Low-Resource Language Identification},
-  author={Foroutan*, Negar and Saydaliev*, Jakhongir and Kim, Ye Eun and Bosselut, Antoine},
-  journal={European Chapter of the Association for Computational Linguistics (EACL)},
-  award={Winner of WMDQS Shared Task #2 at COLM 2025},
-  year={2026},
-  code={https://github.com/epfl-nlp/ConLID},
-  pdf={https://arxiv.org/pdf/2506.15304},
-  abstract = {Language identification (LID) is a critical step in curating multilingual LLM pretraining corpora from web crawls. While many studies on LID model training focus on collecting diverse training data to improve performance, lowresource languages – often limited to single domain data, such as the Bible – continue to perform poorly. To resolve these class imbalance and bias issues, we propose a novel supervised contrastive learning (SCL) approach to learn domain-invariant representations for low-resource languages. Through an extensive analysis, we show that our approach improves LID performance on out-of-domain data for low-resource languages by 3.2%, demonstrating its effectiveness in enhancing LID models.},
-  preview = {conlid_figure.png},
-  category={selected},
-}
-
-@article{karch2025llmagentsinteractiveexploration,
-  title={LLM Agents for Interactive Exploration of Historical Cadastre Data: Framework and Application to Venice},
-  DOI={10.1017/chr.2025.10014},
-  journal={Computational Humanities Research (CHR)},
-  author={Karch*, Tristan and Saydaliev*, Jakhongir and Di Lenardo, Isabella and Kaplan, Frédéric},
-  code={https://github.com/dhlab-epfl/venice-agents},
-  pdf={https://arxiv.org/pdf/2505.17148},
-  abstract={Cadastral data reveal key information about the historical organization of cities but are often non-standardized due to diverse formats and human annotations, complicating large-scale analysis. We explore as a case study Venice's urban history during the critical period from 1740 to 1808, capturing the transition following the fall of the ancient Republic and the Ancien Régime. This era's complex cadastral data, marked by its volume and lack of uniform structure, presents unique challenges that our approach adeptly navigates, enabling us to generate spatial queries that bridge past and present urban landscapes. We present a text-to-programs framework that leverages Large Language Models (LLMs) to process natural language queries as executable code for analyzing historical cadastral records. Our methodology implements two complementary techniques: a SQL agent for handling structured queries about specific cadastral information, and a coding agent for complex analytical operations requiring custom data manipulation. We propose a taxonomy that classifies historical research questions based on their complexity and analytical requirements, mapping them to the most appropriate technical approach. This framework is supported by an investigation into the execution consistency of the system, alongside a qualitative analysis of the answers it produces. By ensuring interpretability and minimizing hallucination through verifiable program outputs, we demonstrate the system's effectiveness in reconstructing past population information, property features, and spatiotemporal comparisons in Venice.},
-  preview={venice_figure.png},
-  year={2025},
-  category={selected}
-}
 
 @misc{hernándezcano2025apertusdemocratizingopencompliant,
   title={TERMINATOR: Learning Optimal Exit Points for Early Stopping in Chain-of-Thought Reasoning}, 
@@ -208,4 +183,30 @@
   abstract={Language identification (LID) is a fundamental step in curating multilingual corpora. However, LID models still perform poorly for many languages, especially on the noisy and heterogeneous web data often used to train multilingual language models. In this paper, we introduce CommonLID, a community-driven, human-annotated LID benchmark for the web domain, covering 109 languages. Many of the included languages have been previously under-served, making CommonLID a key resource for developing more representative high-quality text corpora. We show CommonLID's value by using it, alongside five other common evaluation sets, to test eight popular LID models. We analyse our results to situate our contribution and to provide an overview of the state of the art. In particular, we highlight that existing evaluations overestimate LID accuracy for many languages in the web domain. We make CommonLID and the code used to create it available under an open, permissive license.},
   preview={commonlid.png},
   note={Contributed to collecting the Uzbek dataset},
+}
+
+@inproceedings{foroutan2025conlidsupervisedcontrastivelearning,
+  title={ConLID: Supervised Contrastive Learning for Low-Resource Language Identification},
+  author={Foroutan*, Negar and Saydaliev*, Jakhongir and Kim, Ye Eun and Bosselut, Antoine},
+  journal={European Chapter of the Association for Computational Linguistics (EACL)},
+  award={Winner of WMDQS Shared Task #2 at COLM 2025},
+  year={2026},
+  code={https://github.com/epfl-nlp/ConLID},
+  pdf={https://arxiv.org/pdf/2506.15304},
+  abstract = {Language identification (LID) is a critical step in curating multilingual LLM pretraining corpora from web crawls. While many studies on LID model training focus on collecting diverse training data to improve performance, lowresource languages – often limited to single domain data, such as the Bible – continue to perform poorly. To resolve these class imbalance and bias issues, we propose a novel supervised contrastive learning (SCL) approach to learn domain-invariant representations for low-resource languages. Through an extensive analysis, we show that our approach improves LID performance on out-of-domain data for low-resource languages by 3.2%, demonstrating its effectiveness in enhancing LID models.},
+  preview = {conlid_figure.png},
+  category={selected},
+}
+
+@article{karch2025llmagentsinteractiveexploration,
+  title={LLM Agents for Interactive Exploration of Historical Cadastre Data: Framework and Application to Venice},
+  DOI={10.1017/chr.2025.10014},
+  journal={Computational Humanities Research (CHR)},
+  author={Karch*, Tristan and Saydaliev*, Jakhongir and Di Lenardo, Isabella and Kaplan, Frédéric},
+  code={https://github.com/dhlab-epfl/venice-agents},
+  pdf={https://arxiv.org/pdf/2505.17148},
+  abstract={Cadastral data reveal key information about the historical organization of cities but are often non-standardized due to diverse formats and human annotations, complicating large-scale analysis. We explore as a case study Venice's urban history during the critical period from 1740 to 1808, capturing the transition following the fall of the ancient Republic and the Ancien Régime. This era's complex cadastral data, marked by its volume and lack of uniform structure, presents unique challenges that our approach adeptly navigates, enabling us to generate spatial queries that bridge past and present urban landscapes. We present a text-to-programs framework that leverages Large Language Models (LLMs) to process natural language queries as executable code for analyzing historical cadastral records. Our methodology implements two complementary techniques: a SQL agent for handling structured queries about specific cadastral information, and a coding agent for complex analytical operations requiring custom data manipulation. We propose a taxonomy that classifies historical research questions based on their complexity and analytical requirements, mapping them to the most appropriate technical approach. This framework is supported by an investigation into the execution consistency of the system, alongside a qualitative analysis of the answers it produces. By ensuring interpretability and minimizing hallucination through verifiable program outputs, we demonstrate the system's effectiveness in reconstructing past population information, property features, and spatiotemporal comparisons in Venice.},
+  preview={venice_figure.png},
+  year={2025},
+  category={selected}
 }
