@@ -11,7 +11,7 @@ profile:
   more_info:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-other_contributions: true # includes papers marked as other_contrib={true}
+other_contributions: false # includes papers marked as other_contrib={true}
 social: true # includes social under the profile photo
 
 announcements:
@@ -25,7 +25,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I research large language and vision models as an MSc student at [EPFL](https://www.epfl.ch/en/). I’m fortunate to have worked at the [NLP](https://nlp.epfl.ch/), [DHLAB](https://www.epfl.ch/labs/dhlab/), [LINX](https://www.epfl.ch/labs/linx/) labs and also at [SwissAI](https://www.swiss-ai.org/) and [Logitech](https://www.logitech.com/). I have done my Bachelor’s at [Politecnico di Torino](https://www.polito.it/).
+I research large language models as an MSc student at [EPFL](https://www.epfl.ch/en/). I’m fortunate to have worked at the [NLP](https://nlp.epfl.ch/), [DHLAB](https://www.epfl.ch/labs/dhlab/), [LINX](https://www.epfl.ch/labs/linx/) labs and also at [SwissAI](https://www.swiss-ai.org/) and [Logitech](https://www.logitech.com/). I have done my Bachelor’s at [Politecnico di Torino](https://www.polito.it/).
 
 #### Research Interests
 I research building inclusive, multimodal reasoning AI systems that work for everyone. Below are some areas I've been working on:
@@ -33,14 +33,11 @@ I research building inclusive, multimodal reasoning AI systems that work for eve
 - **Multilingual NLP:** I want to bridge the gaps in multilingual NLP & ensure AI benefits linguistically diverse and underrepresented communities
   - [ConLID](https://arxiv.org/abs/2506.15304): Contrastive language identification for low-resource languages
   - [Apertus](https://arxiv.org/abs/2509.14233): The first large-scale language model developed in Switzerland
-  <!-- - COLM workshop (annotations, models) -->
 
 - **Multimodal Reasoning:** Models need to reason across modalities, not just text, to handle real-world scenarios
-  - [Multimodal reasoning](https://jakhongir0103.github.io/projects/3_project/): Bounding boxes based multimodal reasoning 
-  - [Tool-augmented visual reasoning](https://jakhongir0103.github.io/projects/4_project/): Multi-turn VLMs training with RL
-  - GUI agents: Building autonomous agents for mouse/keyboard operations (ongoing)
+  - [Mixed-model reasoning](https://jakhongir0103.github.io/projects/mixed_modal_reasoning/): Bounding boxes based multimodal reasoning 
+  - [Tool-augmented visual reasoning](https://jakhongir0103.github.io/projects/multi_turn_rl/): Multi-turn VLMs training with RL
+  - [GUI agents](https://github.com/Jakhongir0103/gui-agent-data-annotation-pipeline): Sclable data collection pipeline for GUI grounding
 
 - **Efficient Reasoning:** As we scale to multimodal scenarios, we need computationally efficient reasoning to make deployment practical
-  - Investigating the "overthinking" phenomenon in LLMs (ongoing)
-
-<!-- *Starting from Fall 2026, I am seeking a PhD position; a brief overview of my proposed work is available in this [research proposal](https://www.youtube.com/watch?v=N3FXViQ1W14) video.* -->
+  - Terminator: Efficient reasoning method to mitigate the "overthinking" phenomenon in LLMs

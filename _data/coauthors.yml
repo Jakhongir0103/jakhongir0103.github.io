@@ -17,3 +17,23 @@
 "kaplan":
   - firstname: ["Frédéric", "Frederic"]
     url: https://scholar.google.com/citations?user=pZEf29QAAAAJ&hl=en
+
+"nagle":
+  - firstname: ["Alliot", "Nagle"]
+    url: https://acnagle.com
+
+"garbaya":
+  - firstname: ["Dhia", "Garbaya"]
+    url: https://dhia680.github.io
+
+"makkuva":
+  - firstname: ["Ashok Vardhan", "Makkuva"]
+    url: https://ashokvardhan.github.io
+
+"gastpar":
+  - firstname: ["Michael", "Gastpar"]
+    url: https://scholar.google.com/citations?user=IQ3hcw4AAAAJ&hl=en
+
+"kim":
+  - firstname: ["Hyeji", "Kim"]
+    url: https://www.ece.utexas.edu/people/faculty/hyeji-kim
