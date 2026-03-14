@@ -93,31 +93,11 @@ ninja.data = [{
           section: "News",},{id: "news-our-conlid-paper-got-accepted-to-eacl",
           title: 'Our ConLID paper got accepted to EACL',
           description: "",
-          section: "News",},{id: "projects-recommender-systems",
-          title: 'Recommender Systems',
-          description: "Compares collaborative filtering, matrix factorization, and neural networks",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/recommender_systems/";
-            },},{id: "projects-document-retrieval",
-          title: 'Document Retrieval',
-          description: "Built an efficient IR system across 7 languages with computational limits",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/document_retrieval/";
-            },},{id: "projects-predicting-cardiovascular-diseases",
+          section: "News",},{id: "projects-predicting-cardiovascular-diseases",
           title: 'Predicting Cardiovascular Diseases',
           description: "Using machine learning on behavioral risk factor data to predict heart disease",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cardiovascular_diseases/";
-            },},{id: "projects-segmentation-and-classification",
-          title: 'Segmentation and Classification',
-          description: "Using classic computer vision techniques to segment and extract, and deep learning for the classification",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/segmentation_classification/";
-            },},{id: "projects-mountain-car",
-          title: 'Mountain Car',
-          description: "Handling sparse reward challenges in reinforcement learning using DQN and Dyna-Q algorithms",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/mountain_car/";
             },},{id: "projects-stance-detection",
           title: 'Stance Detection',
           description: "Fine-tuning Large Language Models for argument stance detection in unseen domains",
@@ -133,31 +113,51 @@ ninja.data = [{
           description: "1.3B LLM trained through a 3-stage pipeline of SFT, DPO, and RAG-tuning on scientific datasets.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/galactita/";
-            },},{id: "projects-visual-reasoning",
-          title: 'Visual Reasoning',
-          description: "Explored GRPO to enhance visual question answering in vision-language models",
+            },},{id: "projects-mountain-car",
+          title: 'Mountain Car',
+          description: "Handling sparse reward challenges in reinforcement learning using DQN and Dyna-Q algorithms",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/visual_reasoning/";
-            },},{id: "projects-llm-training",
-          title: 'LLM training',
-          description: "🥈2nd Place🥈 － Hackathon on LLM training &amp; architecture",
+              window.location.href = "/projects/mountain_car/";
+            },},{id: "projects-segmentation-and-classification",
+          title: 'Segmentation and Classification',
+          description: "Using classic computer vision techniques to segment and extract, and deep learning for the classification",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/hackathon_llm_training/";
-            },},{id: "projects-multi-turn-rl",
-          title: 'Multi-turn RL',
-          description: "Extended the VeRL framework to support training multimodal models with multi-turn reinforcement learning with external tools.",
+              window.location.href = "/projects/segmentation_classification/";
+            },},{id: "projects-document-retrieval",
+          title: 'Document Retrieval',
+          description: "Built an efficient IR system across 7 languages with computational limits",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/multi_turn_rl/";
+              window.location.href = "/projects/document_retrieval/";
             },},{id: "projects-satellite-imagery",
           title: 'Satellite Imagery',
           description: "🥇1st Place🥇 － Hackathon on analyzing satellite imagery based on LLMs and CV (Lauzhack 2024, AXA challenge)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/hackathon_satellite_imagery/";
+            },},{id: "projects-recommender-systems",
+          title: 'Recommender Systems',
+          description: "Compares collaborative filtering, matrix factorization, and neural networks",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/recommender_systems/";
+            },},{id: "projects-llm-training",
+          title: 'LLM training',
+          description: "🥈2nd Place🥈 － Hackathon on LLM training &amp; architecture",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/hackathon_llm_training/";
+            },},{id: "projects-visual-reasoning",
+          title: 'Visual Reasoning',
+          description: "Explored GRPO to enhance visual question answering in vision-language models",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/visual_reasoning/";
             },},{id: "projects-mixed-modal-reasoning",
           title: 'Mixed-modal Reasoning',
           description: "Trained 3 paradigms of visual reasoning using GRPO",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mixed_modal_reasoning/";
+            },},{id: "projects-multi-turn-rl",
+          title: 'Multi-turn RL',
+          description: "Extended the VeRL framework to support training multimodal models with multi-turn reinforcement learning with external tools.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/multi_turn_rl/";
             },},{
         id: 'social-email',
         title: 'email',
