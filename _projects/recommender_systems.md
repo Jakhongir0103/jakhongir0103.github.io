@@ -3,9 +3,8 @@ layout: page
 title: Recommender Systems
 description: Compares collaborative filtering, matrix factorization, and neural networks
 img: assets/img/projects/dis2_mf_buomso.jpg
-importance: 10
 category: university
-date: 2021-11-01
+date: 2024-12-01
 report: https://github.com/Jakhongir0103/dis_projects/blob/main/pdfs/Project_2_Recommender_Systems.pdf
 ---
 

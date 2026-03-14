@@ -3,11 +3,10 @@ layout: page
 title: Multi-turn RL
 description: Extended the VeRL framework to support training multimodal models with multi-turn reinforcement learning with external tools.
 img: assets/img/projects/verl_thumbnal.png
-importance: 2
 images:
   slider: true
 category: research
-date: 2024-06-01
+date: 2025-08-01
 github: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
 ---
 

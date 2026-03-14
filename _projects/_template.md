@@ -3,7 +3,6 @@ layout: page
 title: project 9
 description: another project with an image 🎉
 img: assets/img/6.jpg
-importance: 4
 category: category
 date: 2024-01-01
 images:

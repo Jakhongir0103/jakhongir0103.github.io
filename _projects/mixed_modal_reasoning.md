@@ -3,9 +3,8 @@ layout: page
 title: Mixed-modal Reasoning
 description: Trained 3 paradigms of visual reasoning using GRPO
 img: assets/img/projects/syrielle_diagram.jpeg
-importance: 1
 category: research
-date: 2024-10-01
+date: 2025-06-01
 images:
   slider: true
 report: https://github.com/Jakhongir0103/multimodal_cot/blob/main/pdf/technical_report.pdf

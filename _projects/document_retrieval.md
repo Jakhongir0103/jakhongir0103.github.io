@@ -3,9 +3,8 @@ layout: page
 title: Document Retrieval
 description: Built an efficient IR system across 7 languages with computational limits
 img: assets/img/projects/dis1_IR_pipeline.jpg
-importance: 8
 category: university
-date: 2022-02-01
+date: 2024-11-01
 report: https://github.com/Jakhongir0103/dis_projects/blob/main/pdfs/Project_1_Document_Retrieval.pdf
 ---
 

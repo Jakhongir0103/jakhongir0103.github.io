@@ -3,9 +3,8 @@ layout: page
 title: Mountain Car
 description: Handling sparse reward challenges in reinforcement learning using DQN and Dyna-Q algorithms
 img: assets/img/projects/mountain_car_gif.gif
-importance: 5
 category: university
-date: 2022-11-01
+date: 2024-05-01
 images:
   slider: true
 report: https://github.com/Jakhongir0103/mountain-car-reinforcement-learning/blob/main/pdf/report.pdf

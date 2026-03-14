@@ -3,8 +3,7 @@ layout: page
 title: YouTube Analysis
 description: Analysis of Tech channels on YouTube using the videos published between May 2005 and October 2019
 img: assets/img/projects/ada_thumbnail.png
-importance: 3
 redirect: https://jakhongir0103.github.io/datastory/
 category: university
-date: 2023-05-01
+date: 2023-12-01
 ---
