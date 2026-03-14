@@ -25,7 +25,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I research large language models as an MSc student at [EPFL](https://www.epfl.ch/en/). I’m fortunate to have worked at the [NLP](https://nlp.epfl.ch/), [DHLAB](https://www.epfl.ch/labs/dhlab/), [LINX](https://www.epfl.ch/labs/linx/) labs and also at [SwissAI](https://www.swiss-ai.org/) and [Logitech](https://www.logitech.com/). I have done my Bachelor’s at [Politecnico di Torino](https://www.polito.it/).
+I research large language models as an MSc student at [EPFL](https://www.epfl.ch/en/). I’m fortunate to have worked at the [NLP](https://nlp.epfl.ch/), [DHLAB](https://www.epfl.ch/labs/dhlab/), [LINX](https://www.epfl.ch/labs/linx/) and [ITML](https://sites.utexas.edu/hkim/) labs and also at [SwissAI](https://www.swiss-ai.org/) and [Logitech](https://www.logitech.com/). I have done my Bachelor’s at [Politecnico di Torino](https://www.polito.it/).
 
 #### Research Interests
 I research building inclusive, multimodal reasoning AI systems that work for everyone. Below are some areas I've been working on:
