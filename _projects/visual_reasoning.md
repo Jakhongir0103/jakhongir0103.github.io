@@ -5,6 +5,7 @@ description: Explored GRPO to enhance visual question answering in vision-langua
 img: assets/img/projects/vi_grounding_overview.jpeg
 importance: 1
 category: university
+date: 2023-01
 report: https://github.com/Jakhongir0103/VLM-R1/blob/main/pdf/Visual_Intelligence_Tech_Report.pdf
 github: https://github.com/Jakhongir0103/VLM-R1
 checkpoints: https://huggingface.co/collections/Jakh0103/visual-intelligence-68398719ee0d35e8b553b5c9

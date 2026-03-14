@@ -5,6 +5,7 @@ description: Using machine learning on behavioral risk factor data to predict he
 img: assets/img/projects/ml1_thumbnail.png
 importance: 7
 category: university
+date: 2022-05-01
 github: https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction
 report: https://github.com/Jakhongir0103/Cardiovascular-Diseases-Prediction/blob/main/pdfs/project1_report.pdf
 ---

@@ -6,4 +6,5 @@ img: assets/img/projects/hack_axa_thumbnail.jpg
 importance: 1
 redirect: https://github.com/Jakhongir0103/vlms-for-satellite-hack
 category: miscellaneous
+date: 2024-09-01
 ---

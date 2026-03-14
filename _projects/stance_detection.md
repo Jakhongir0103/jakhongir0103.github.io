@@ -5,6 +5,7 @@ description: Fine-tuning Large Language Models for argument stance detection in 
 img: assets/img/projects/ml2_selected_models_f1.png
 importance: 4
 category: university
+date: 2023-01
 report: https://github.com/Jakhongir0103/Machine-Learning_EPFL/blob/master/projects/project2/project2_report.pdf
 ---
 

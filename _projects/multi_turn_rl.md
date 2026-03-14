@@ -7,6 +7,7 @@ importance: 2
 images:
   slider: true
 category: research
+date: 2024-06-01
 github: https://github.com/Jakhongir0103/verl/blob/main/README_VLMRL.md
 ---
 

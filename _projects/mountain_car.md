@@ -5,6 +5,7 @@ description: Handling sparse reward challenges in reinforcement learning using D
 img: assets/img/projects/mountain_car_gif.gif
 importance: 5
 category: university
+date: 2022-11-01
 images:
   slider: true
 report: https://github.com/Jakhongir0103/mountain-car-reinforcement-learning/blob/main/pdf/report.pdf

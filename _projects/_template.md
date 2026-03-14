@@ -5,6 +5,7 @@ description: another project with an image 🎉
 img: assets/img/6.jpg
 importance: 4
 category: category
+date: 2024-01-15
 images:
   slider: true
 ---

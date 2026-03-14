@@ -5,6 +5,7 @@ description: Using classic computer vision techniques to segment and extract, an
 img: assets/img/projects/coin_neutral_segmentation.png
 importance: 6
 category: university
+date: 2022-08-01
 images:
   slider: true
 github: https://github.com/Jakhongir0103/Coin-segmentation-and-classification
