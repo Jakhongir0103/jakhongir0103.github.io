@@ -1,3 +1,155 @@
+% ============================================================================
+% HOW TO ADD NEW PUBLICATIONS TO THIS FILE
+% ============================================================================
+%
+% ENTRY TYPES:
+%   @article          - Journal article
+%   @inproceedings    - Conference paper
+%   @misc             - Preprint, technical report, or other unpublished work
+%   @book             - Book
+%   @inbook           - Chapter in a book
+%   @mastersthesis    - Master's thesis
+%   @phdthesis        - PhD dissertation
+%
+% ============================================================================
+% REQUIRED KEYS (must include for all entries):
+% ============================================================================
+%   title             - Title of the publication
+%   author            - Authors separated by "and"
+%                       Tip: Use * to mark corresponding author: "Name*"
+%   year              - Publication year (e.g., 2024)
+%
+% ============================================================================
+% VENUE/PUBLICATION KEYS (depends on entry type):
+% ============================================================================
+%   journal           - For @article/@inproceedings: Journal or conference name
+%                       Use full name or "(ABBR)" format: "Conference Name (ABBR)"
+%   booktitle         - For @inproceedings: Full proceedings title (alternative to journal)
+%   school            - For @mastersthesis/@phdthesis: University name
+%   month             - Publication month (optional, e.g., "January" or "01")
+%   location          - Publication location/city (optional, e.g., "New York, USA")
+%
+% ============================================================================
+% LINKS & ACCESS (all optional, create clickable buttons):
+% ============================================================================
+%   pdf               - Link to PDF file
+%                       Can be full URL: https://arxiv.org/pdf/2401.00000
+%                       Or filename in /assets/pdf/: myfile.pdf
+%   code              - GitHub or code repository URL
+%   html              - HTML version link
+%   supp              - Supplementary material link (filename or URL)
+%   poster            - Poster PDF link (filename or URL)
+%   slides            - Presentation slides link (filename or URL)
+%   blog              - Blog post or extended discussion URL
+%   video             - Video link or YouTube URL
+%   website           - Project website or demo URL
+%   dataset           - Dataset URL or DOI
+%
+% ============================================================================
+% METADATA & IDENTIFIERS (all optional):
+% ============================================================================
+%   DOI               - Digital Object Identifier (e.g., 10.1234/example)
+%                       Creates button linking to https://doi.org/10.1234/example
+%   arxiv             - arXiv identifier (e.g., 2401.00000)
+%                       Creates button linking to http://arxiv.org/abs/2401.00000
+%   eprint            - Alternative to arxiv for preprint IDs
+%   pmid              - PubMed ID for biomedical papers
+%   isbn              - ISBN for books
+%   google_scholar_id - Google Scholar citation ID (for citation badges)
+%   inspirehep_id     - InspireHEP identifier (for physics papers)
+%   altmetric         - Altmetric ID or "true" to auto-detect (adds altmetric badge)
+%   dimensions        - Dimensions ID or "true" to auto-detect (adds dimensions badge)
+%
+% ============================================================================
+% CONTENT & DISPLAY (all optional):
+% ============================================================================
+%   abstract          - Paper abstract text (shown in popup when "Abs" button clicked)
+%   preview           - Thumbnail image filename (from /assets/img/publication_preview/)
+%                       Can be full URL: https://example.com/image.png
+%                       Or filename: my_image.png (will look in /assets/img/publication_preview/)
+%   abbr              - Venue abbreviation badge (e.g., "ICLR", "NeurIPS")
+%                       Displayed as a colored badge using venue data from _data/venues.yml
+%   award             - Award/recognition text (e.g., "Best Paper Award")
+%                       Creates a special "Awarded" button with the text in a tooltip
+%   award_name        - Custom button text for award (default: "Awarded")
+%   note              - Additional note displayed below journal/conference name
+%   annotation        - Short note icon tooltip (shows info icon next to author names)
+%   bibtex_show       - Set to true to show "Bib" button for bibtex citation download
+%   additional_info   - Extra info appended to journal/venue line (supports markdown)
+%
+% ============================================================================
+% FILTERING & ORGANIZATION (all optional):
+% ============================================================================
+%   category          - Publication category for filtering on site:
+%                       - "selected"   → Shows in "Selected Publications" on about page
+%                       - "other"      → Shows in "Other contributions" section on about page
+%                       - (omit)       → Regular publication (shows on publications page only)
+%
+% ============================================================================
+% USAGE EXAMPLES:
+% ============================================================================
+%
+% Simple conference paper:
+%   @inproceedings{key2024title,
+%     title={Full Title of Paper},
+%     author={First Author and Second Author* and Third Author},
+%     journal={Conference Name (ICLR)},
+%     year={2024},
+%     code={https://github.com/username/repo},
+%     pdf={https://arxiv.org/pdf/2401.00000},
+%     abstract={Paper abstract here...},
+%     preview={image_filename.png},
+%     category={selected},
+%     award={Best Paper Award}
+%   }
+%
+% Journal article with DOI:
+%   @article{key2024journal,
+%     title={Journal Article Title},
+%     author={Author One and Author Two},
+%     journal={Journal Name},
+%     year={2024},
+%     DOI={10.1234/example},
+%     abstract={Abstract...},
+%     code={https://github.com/...},
+%     month={February}
+%   }
+%
+% Preprint with arXiv ID:
+%   @misc{key2024preprint,
+%     title={Preprint Title},
+%     author={Author},
+%     journal={arXiv},
+%     year={2024},
+%     arxiv={2401.00000},
+%     abstract={...},
+%     note={Submitted to Conference Name}
+%   }
+%
+% Award-winning publication with all bells and whistles:
+%   @inproceedings{key2024amazing,
+%     title={Amazing Research Title},
+%     author={You* and Colleague and Another Colleague},
+%     journal={Top Venue (ICML)},
+%     year={2024},
+%     month={July},
+%     location={Vienna, Austria},
+%     code={https://github.com/yourname/amazing-code},
+%     pdf={https://arxiv.org/pdf/2306.12345},
+%     slides={presentation.pdf},
+%     poster={poster.pdf},
+%     video={https://youtube.com/watch?v=xxxxx},
+%     dataset={https://zenodo.org/record/xxxxx},
+%     abstract={Long abstract...},
+%     preview={amazing_figure.png},
+%     abbr={ICML},
+%     award={Spotlight Presentation},
+%     category={selected},
+%     bibtex_show={true}
+%   }
+%
+% ============================================================================
+
 @inproceedings{foroutan2025conlidsupervisedcontrastivelearning,
   title={ConLID: Supervised Contrastive Learning for Low-Resource Language Identification},
   author={Foroutan*, Negar and Saydaliev*, Jakhongir and Kim, Ye Eun and Bosselut, Antoine},
@@ -8,8 +160,7 @@
   pdf={https://arxiv.org/pdf/2506.15304},
   abstract = {Language identification (LID) is a critical step in curating multilingual LLM pretraining corpora from web crawls. While many studies on LID model training focus on collecting diverse training data to improve performance, lowresource languages – often limited to single domain data, such as the Bible – continue to perform poorly. To resolve these class imbalance and bias issues, we propose a novel supervised contrastive learning (SCL) approach to learn domain-invariant representations for low-resource languages. Through an extensive analysis, we show that our approach improves LID performance on out-of-domain data for low-resource languages by 3.2%, demonstrating its effectiveness in enhancing LID models.},
   preview = {conlid_figure.png},
-  selected={true},
-  other_contrib={false},
+  category={selected},
 }
 
 @article{karch2025llmagentsinteractiveexploration,
@@ -22,8 +173,7 @@
   abstract={Cadastral data reveal key information about the historical organization of cities but are often non-standardized due to diverse formats and human annotations, complicating large-scale analysis. We explore as a case study Venice's urban history during the critical period from 1740 to 1808, capturing the transition following the fall of the ancient Republic and the Ancien Régime. This era's complex cadastral data, marked by its volume and lack of uniform structure, presents unique challenges that our approach adeptly navigates, enabling us to generate spatial queries that bridge past and present urban landscapes. We present a text-to-programs framework that leverages Large Language Models (LLMs) to process natural language queries as executable code for analyzing historical cadastral records. Our methodology implements two complementary techniques: a SQL agent for handling structured queries about specific cadastral information, and a coding agent for complex analytical operations requiring custom data manipulation. We propose a taxonomy that classifies historical research questions based on their complexity and analytical requirements, mapping them to the most appropriate technical approach. This framework is supported by an investigation into the execution consistency of the system, alongside a qualitative analysis of the answers it produces. By ensuring interpretability and minimizing hallucination through verifiable program outputs, we demonstrate the system's effectiveness in reconstructing past population information, property features, and spatiotemporal comparisons in Venice.},
   preview={venice_figure.png},
   year={2025},
-  selected={true},
-  other_contrib={false}
+  category={selected}
 }
 
 @misc{hernándezcano2025apertusdemocratizingopencompliant,
@@ -33,9 +183,7 @@
   year={2026},
   abstract={Large Reasoning Models (LRMs) achieve impressive performance on complex reasoning tasks via Chain-of-Thought (CoT) reasoning, which enables them to generate intermediate thinking tokens before arriving at the final answer. However, LRMs often suffer from significant "overthinking", spending excessive compute time even after the answer is generated early on. Prior work has identified the existence of an optimal reasoning length such that truncating reasoning at this point significantly shortens CoT outputs with virtually no change in performance. However, determining optimal CoT lengths for practical datasets is highly non-trivial as they are fully task and model-dependent. In this paper, we precisely address this and design TERMINATOR, an early-exit strategy for LRMs at inference to mitigate overthinking. The central idea underpinning TERMINATOR is that the first arrival of an LRM's final answer is often predictable, and we leverage these first answer positions to create a novel dataset of optimal reasoning lengths to train TERMINATOR. Powered by this approach, TERMINATOR achieves significant reductions in CoT lengths of 14%–55% on average across four challenging practical datasets: MATH-500, AIME 2025, HumanEval, and GPQA, whilst outperforming current state-of-the-art methods.},
   preview={terminator.png},
-  selected={true},
-  other_contrib={false},
-  note={Contributed to the pre-training data through my ConLID project},
+  category={selected},
 }
 
 @misc{hernándezcano2025apertusdemocratizingopencompliant,
@@ -47,8 +195,6 @@
   pdf={https://arxiv.org/pdf/2509.14233},
   abstract={We present Apertus, a fully open suite of large language models (LLMs) designed to address two systemic shortcomings in today's open model ecosystem: data compliance and multilingual representation. Unlike many prior models that release weights without reproducible data pipelines or regard for content-owner rights, Apertus models are pretrained exclusively on openly available data, retroactively respecting this http URL exclusions and filtering for non-permissive, toxic, and personally identifiable content. To mitigate risks of memorization, we adopt the Goldfish objective during pretraining, strongly suppressing verbatim recall of data while retaining downstream task performance. The Apertus models also expand multilingual coverage, training on 15T tokens from over 1800 languages, with ~40% of pretraining data allocated to non-English content. Released at 8B and 70B scales, Apertus approaches state-of-the-art results among fully open models on multilingual benchmarks, rivalling or surpassing open-weight counterparts. Beyond model weights, we release all scientific artifacts from our development cycle with a permissive license, including data preparation scripts, checkpoints, evaluation suites, and training code, enabling transparent audit and extension.},
   preview={apertus.png},
-  selected={false},
-  other_contrib={false},
   note={Contributed to the pre-training data through my ConLID project},
 }
 
@@ -61,7 +207,5 @@
   dataset={https://huggingface.co/datasets/commoncrawl/CommonLID},
   abstract={Language identification (LID) is a fundamental step in curating multilingual corpora. However, LID models still perform poorly for many languages, especially on the noisy and heterogeneous web data often used to train multilingual language models. In this paper, we introduce CommonLID, a community-driven, human-annotated LID benchmark for the web domain, covering 109 languages. Many of the included languages have been previously under-served, making CommonLID a key resource for developing more representative high-quality text corpora. We show CommonLID's value by using it, alongside five other common evaluation sets, to test eight popular LID models. We analyse our results to situate our contribution and to provide an overview of the state of the art. In particular, we highlight that existing evaluations overestimate LID accuracy for many languages in the web domain. We make CommonLID and the code used to create it available under an open, permissive license.},
   preview={commonlid.png},
-  selected={false},
-  other_contrib={false},
   note={Contributed to collecting the Uzbek dataset},
 }
