@@ -40,4 +40,4 @@ I research building inclusive, multimodal reasoning AI systems that work for eve
   - [GUI agents](https://github.com/Jakhongir0103/gui-agent-data-annotation-pipeline): Sclable data collection pipeline for GUI grounding
 
 - **Efficient Reasoning:** As we scale to multimodal scenarios, we need computationally efficient reasoning to make deployment practical
-  - Terminator: Efficient reasoning method to mitigate the "overthinking" phenomenon in LLMs
+  - [Terminator](https://terminator-llm.github.io): Efficient reasoning method to mitigate the "overthinking" phenomenon in LLMs
